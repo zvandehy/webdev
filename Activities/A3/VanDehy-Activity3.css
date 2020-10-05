@@ -1,0 +1,100 @@
+/*ITIS 3135 Activity 3 css file*/
+
+/*styling for the whole page goes here*/
+body {
+	font-size: 16px;
+    background-color: #eeeeee;
+	color: #680000;
+}
+
+/*styling for the page title*/
+h1 {
+	font-style: italic;
+	font-size: 28px;
+    text-align: center;
+    background-color: #996600;
+	color: #f8f8f8;
+}
+
+/*styling for the overall table*/
+table {
+    background-color: #F8F8F8;
+	border: solid 2px #787878;
+}
+
+/*styling for the title of the table*/
+th {
+    font-weight: bold;
+    text-align: left;
+}
+
+/*styling for the coffee types*/
+.label {
+    font-weight: bold;
+}
+
+/*styling for the tables*/
+.altrow {
+	background-color: #E0E0E0;
+}
+
+/*styling for the Google Map link*/
+#locationlink {
+	color: #380000;
+	font-style:italic;
+}
+
+/*styling for the bottom copyright information*/
+footer {
+    font-style: italic;
+	font-size: 12px;
+	text-align: center;
+}
+
+/* Activity 3 */
+
+/* Checkboxes */
+.notifications {
+	padding:5px 5px 0px 10px;
+}
+
+/* Radio buttons  */
+input[type=radio] {
+	margin:5px 5px 0px 15px;
+}
+
+ /* "headers" for checkboxes and radio buttons */
+.select {
+	padding-left:10px;
+}
+
+/* Labels to left of text inputs */
+label.text {
+	width: 115px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 8px;
+ }
+
+ /* Asterisks after required text boxes */
+ /* I think there will be a better solution to this in the future using JQuery, but for now I have to include a span after the inputs */
+ /* also convention might be to put the asterisk after the label, but it took me too long to figure out how to do this to change it now lol */
+
+input[required] + span:after{
+	content: "*";
+	color:red;
+ }
+
+/* button */
+/* cite: https://learn.zybooks.com/zybook/UNCCITIS3135BasuFall2020/chapter/1/section/37 */
+input[type=submit] {
+		width: 200px;
+		background-color: #680000; /* dark color */
+		color: white; /* light text */
+		padding: 15px;
+		margin: 10px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+}
+

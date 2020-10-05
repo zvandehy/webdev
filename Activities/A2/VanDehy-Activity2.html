@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Employee table</title>
+	<meta name="description" content="3135 Activity">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="VanDehy-Activity2.css">
+</head>
+
+<body>
+	<figure>
+		<figcaption>
+			<h1>Employee Table</h1>
+		</figcaption>
+		<table>
+			<thead>
+				<tr>
+					<th id="department" scope="col">Department</th>
+					<th id="name" scope="col">Name</th>
+					<th id="email" scope="col">E-mail</th>
+					<th id="years" class="right" scope="col">Years of<br> Service</th>
+					<th id="salary" scope="col">Estimated Salary<br>per month</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th id="research" headers="department" class="dname" rowspan="2" scope="rowgroup">Research</th>
+					<td headers="name research">John<br>Murach</td>
+					<td headers="email research">joelmurach@yahoo.com</td>
+					<td headers="years research" class="right">20</td>
+					<td headers="salary research">10000$</td>
+				</tr>
+				<tr>
+					<td headers="name research">Anna<br>Boehm</td>
+					<td headers="email research"> anne@murach.com</td>
+					<td headers="years research" class="right">33</td>
+					<td headers="salary research">12000$</td>
+				</tr>
+				<tr>
+					<th id="development" headers="department" class="dname" rowspan="3" scope="rowgroup">Development
+					</th>
+					<td headers="name development">Zak<br>Ruvalcaba</td>
+					<td headers="email development">zak@modulemedia.com</td>
+					<td headers="years development" class="right">5</td>
+					<td headers="salary development">5000$</td>
+				</tr>
+				<tr>
+					<td headers="name development">Judy<br>Taylor</td>
+					<td headers="email development">judy@murach.com</td>
+					<td headers="years development" class="right">3</td>
+					<td headers="salary development">3000$</td>
+				</tr>
+				<tr>
+					<td headers="name development">Cyndi<br>Vasquez</td>
+					<td headers="email development">cyndi@murach.com</td>
+					<td headers="years development" class="right">10</td>
+					<td headers="salary development">7000$</td>
+				</tr>
+				<tr>
+					<th id="marketing" headers="department" class="dname" rowspan="2" scope="rowgroup">Marketing</th>
+					<td headers="name marketing">Kelly<br>Slivkoff</td>
+					<td headers="email marketing">kelly@murach.com</td>
+					<td headers="years marketing" class="right">25</td>
+					<td headers="salary marketing">12000$</td>
+				</tr>
+				<tr>
+					<td headers="name marketing">Juliette<br>Baylon</td>
+					<td headers="email marketing">juliette@murach.com</td>
+					<td headers="years marketing" class="right">4</td>
+					<td headers="salary marketing">3000$</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th id="total" class="right" colspan="3" scope="row">Total Years of Service</th>
+					<td headers="years total" class="right">100</td>
+					<td headers="salary total" class="right">Total Estimated <br> Salary <br> Expenditure = <br>52000$
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</figure>
+	<footer>
+		<a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> <br>
+		<a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+	</footer>
+</body>
+
+</html>

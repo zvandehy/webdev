@@ -1,0 +1,19 @@
+address {
+    background-color:tan;
+}
+
+.brown {
+    background-color:brown;
+    text-align: center;
+}
+
+img {
+    width: 900px;
+    height:400px;
+    margin:auto;
+}
+
+main {
+    margin:auto;
+    width: 500px;
+}

@@ -1,0 +1,70 @@
+/*ITIS 3135 Activity 2 css file*/
+
+/*styling for the table goes here*/
+body
+{
+	width: 750px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+table
+{
+	border-collapse: collapse;
+	margin: 20px;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+}
+
+thead
+{
+	background-color: green;
+}
+
+.right
+{
+	text-align: right;
+}
+
+tfoot {
+	background-color: lightgreen;
+	font-weight: bold;
+}
+
+th, td
+{
+	border: 1px solid black;
+	padding: .2em 1em .2em .5em;
+	text-align: left;
+	vertical-align: middle;
+	color: black;
+}
+
+tbody tr:nth-child(even) td
+{
+	background-color: lightgreen;
+}
+
+tbody tr th.dname
+{
+	background-color:inherit;
+	color: black;
+	font-weight: bold;
+	vertical-align: top;
+	text-align: left;
+}
+
+thead th:nth-child(4)
+{
+	text-align: center;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+tbody tr td:last-child
+{
+	width: 120px;
+}
