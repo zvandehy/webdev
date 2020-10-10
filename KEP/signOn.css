@@ -1,0 +1,54 @@
+#estimatorForm {
+    background-color: rgb(218, 216, 216);
+    text-align: center;
+    width:35%;
+    padding: 10% 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 1px solid #aaa
+}
+
+body {
+    font-family: sans-serif;
+}
+
+select {
+    cursor: pointer;
+    width: 100%;
+    height:40px;
+    border-radius: 0px;
+    border:none;
+    border-bottom: 2px solid rgb(94, 113, 223);
+    background-color: rgb(166, 174, 219);
+    text-align: center;
+    margin-top:15px;
+    appearance: none;
+}
+
+select:hover {
+    font-weight: bold;
+    color: black;
+    background-color:  rgb(236, 239, 255);
+}
+
+select:focus {
+    font-weight: normal;
+}
+
+option {
+    padding: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type=submit] {
+    padding:15px;
+    margin-top:15px;
+    width:100%;
+    background-color: rgb(94, 113, 223);
+    color:white;
+}

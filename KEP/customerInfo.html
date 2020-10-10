@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customerInfo.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header">
+        <img id="logo" src="./src/logo.png" alt="logo">
+        <h1 id="KEP">Karen's Estimating Program</h1>
+    </div>
+
+
+    <form action="/spaceTypes.html" method="GET">
+        <div id="customerInfoForm">
+            <!-- name -->
+            <div>
+                <label class="required" for="firstName">Customer First Name<span>*</span></label>
+                <input id="firstName" name="firstName" type="text" required><span></span>
+            </div>
+            <div>
+                <label class="required" for="lastName">Customer Last Name<span>*</span></label>
+                <input id="lastName" name="lastName" type="text" required><span></span>
+            </div>
+            <!-- phone -->
+            <div>
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="text"><span></span>
+            </div>
+            <!-- email -->
+            <div>
+                <label class="required" for="email">Email<span>*</span></label>
+                <input id="email" name="email" type="text" required><span></span>
+            </div>
+            <!-- address -->
+            <div>
+                <label class="required" for="address">Street Address<span>*</span></label>
+                <input id="address" name="address" type="text" required><span></span>
+            </div>
+            <div>
+                <label for="address2">Street Address Part 2</label>
+                <input id="address2" name="address2" type="text"><span></span>
+            </div>
+            <!-- city -->
+            <div>
+                <label class="required" for="city">City<span>*</span></label>
+                <input id="city" name="city" type="text" required><span></span>
+            </div>
+            <!-- zip -->
+            <div>
+                <label class="required" for="zip">Zipcode<span>*</span></label>
+                <input name="zip" id="zip" type="text" required><span></span>
+            </div>
+            <!-- estimator -->
+            <div>
+                <label class="required" for="estimator">Estimator<span>*</span></label>
+                <input id="estimator" name="estimator" type="text" value="Jeff" required><span></span>
+            </div>
+            <!-- date -->
+            <div>
+                <label class="required" for="date">Date<span>*</span></label>
+                <input id="date" name="date" type="date" required><span></span>
+            </div>
+            <div id="submission">
+                <input type="submit" value="Continue to Add Rooms">
+            </div>
+        </div>
+    </form>
+
+    <div id="footer">
+        <p id="slogan">Let us color your world!</p>
+        <p>
+            <span>Visit:</span>
+            <br>
+            <a href="karenscompany.com">karenscompany.com</a>
+        </p>
+        <p>
+            <span>Email:</span>
+            <br>
+            <a href="mailto:karen@karenscompany.com">karen@karenscompany.com</a>
+            <br>
+            <a href="mailto:jeff@karenscompany.com">jeff@karenscompany.com</a>
+        </p>
+        <p>
+            <span>Phone:</span>
+            <br>
+            (303) 664-0607
+        </p>
+        <p>
+            <span>Address:</span>
+            <br>
+            610 Public Road
+            <br>
+            Unit B
+            <br>
+            Lafayette, CO 80026
+        </p>
+    </div>
+</body>
+
+</html>
