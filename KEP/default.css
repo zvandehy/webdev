@@ -1,0 +1,56 @@
+body {
+ padding:0px;
+ margin: 0px;
+}
+
+/* ----- header ----- */
+#header {
+    background-color: rgb(66, 66, 66);
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    margin-bottom: 15px;
+    
+}
+
+#header > #logo {
+    height:75px;
+    width:90px;
+    flex: 0 1 auto;
+    margin-left: 5px;
+}
+
+#header > #kep {
+    color: white;
+    flex: 0 1 60%;
+    margin: auto;
+    display:table;
+    font-variant:small-caps;
+}
+
+/* ----- footer ----- */
+#footer {
+    background-color: rgb(66, 66, 66);
+    display:flex;
+    flex-direction:row;
+    padding:10px;
+}
+#footer > p {
+    color: white;
+    flex: 0 1 60%;
+    margin: auto;
+    display:table;
+    font-size: small;
+}
+#footer > p > a {
+    color: white;
+}
+
+#footer > span {
+    font-weight: bold;
+}
+
+#footer > #slogan {
+    font-weight: bold;
+    flex: 1 1 60%;
+}

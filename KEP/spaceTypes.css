@@ -5,7 +5,12 @@ h1 {
     display:table;
 }
 
+section {
+    height:100vh;
+}
+
 #spaceGrid {
+    position:relative;
     display:grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 10px auto;
@@ -42,7 +47,6 @@ h1 {
     font-size: medium;
 }
 
-
 .cover {
     background-color: black;
     opacity:0.3;
@@ -57,12 +61,14 @@ img {
     height:100%;
 }
 
-input[type=submit] {
+#spaceTypeSubmit {
     width:80%;
     background-color: blue;
-    color:white;
+    color:rgb(238, 237, 237);
     display:block;
     margin:auto;
+    text-align:center;
+    border:1px black solid;
 }
 
 

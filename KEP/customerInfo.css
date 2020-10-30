@@ -46,14 +46,14 @@ label > span {
     color:red;
 }
 
-label + input[required]:focus + span::after {
+/* label + input[required]:focus + span::after {
     content:"*";
     color:red;
 }
 
 label + input + span::after {
     content:"";
-}
+} */
 
 input {
     width:90%;
