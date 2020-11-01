@@ -1,0 +1,179 @@
+html, body {
+    min-height:100vh;
+}
+
+button {
+    border:none;
+}
+
+#typesGrid {
+    position:relative;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10px auto;
+    width:80%;
+}
+
+.roomType {
+    border: 1px solid black;
+    margin:5px;
+    position:relative;
+}
+
+.roomType:hover {
+    cursor: pointer;
+    border: 1px solid rgb(142, 142, 255);
+}
+
+.roomType:hover .cover {
+    opacity: 0.1;
+}
+
+.roomName {
+    position: absolute;
+    bottom:40%;
+    color: white;
+    width:100%;
+    height:40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.cover {
+    background-color: black;
+    opacity:0.3;
+    width:100%;
+    height:100%;
+    position: absolute;
+    bottom:0px;
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 5px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
+height: 270px;
+}
+
+/* The Close Button */
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+position:relative;
+top:-15px;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+
+/* Modal SubType Buttons */
+.subType {
+    margin:10px;
+    margin-top:0px;
+    text-decoration: none;
+    
+    flex: 1 1 auto;
+    width:3%;
+    max-width: 180px;
+    max-height: 90px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #009eaa;
+    line-height: 25px;
+    padding: 3% 0;
+    background-color: #009eaa;
+    color:white;
+    font-weight: bold;
+}
+
+.subType:hover, .selected {
+    background-color: #2980b9;
+    border-color:   #2980b9;
+    cursor:pointer;
+}
+
+.selected span::after {
+    content:"selected";
+}
+
+.selected span {
+    position:relative;
+    font-size: x-small;
+    bottom:0px;
+    display: block;
+}
+
+
+.subtypes {
+    display:flex;
+    justify-content: center;
+    height:100px;
+    margin-top:25px;
+}
+
+.modal-header {
+    margin-top:10px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.modal-bottom {
+    text-align: center;
+    color:black;
+    margin-top:15px;
+}
+
+.modal-bottom label {
+    margin-right:5px;
+}
+
+.modal-bottom input {
+    height:25px;
+    width:200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.modal-bottom button {
+    height:30px;
+    width: 120px;
+    border: 1px solid  #e74c3c;
+    color: white;
+    background-color:#e74c3c;
+    border-radius: 10px;
+}
+
+.modal-bottom button:hover {
+    cursor:pointer;
+}   

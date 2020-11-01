@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="roomTypes.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="default.js"></script>
+    <script src="roomTypes.js"></script>
+    <title>Room Types</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header"></header>
+    <h1 id="pageHeader">Add a Room Type</h1>
+    <section id="main">
+        <form action="/roomDetails.html" method="GET">
+            <div id="typesGrid">
+            </div>
+        </form>
+        <!-- The Modal -->
+        <!-- cite: https://www.w3schools.com/howto/howto_css_modals.asp -->
+        <div id="roomTypeModal" class="modal">
+            <form action="roomDetails.html" method="GET">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        Select the Subtype:
+                    </div>
+                    <div class="subtypes"></div>
+                    <div class="modal-bottom">
+                        <label for="subtypes">Unique Room Name</label><input type="text" id="uniqueName">
+                        <button type="submit" id="addRoomType"><span>&#8594;</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+</body>
+
+</html>

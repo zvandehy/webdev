@@ -13,58 +13,40 @@
 
 <body>
     <header id="header"></header>
+    <h1 id="pageHeader">Customer Information</h1>
 
-
-    <form action="/spaceTypes.html" method="GET">
+    <form action="/roomTypes.html" method="GET">
+        
         <div id="customerInfoForm">
-            <!-- name -->
-            <div>
-                <label class="required" for="firstName">Customer First Name<span>*</span></label>
-                <input id="firstName" name="firstName" type="text" required><span></span>
-            </div>
-            <div>
-                <label class="required" for="lastName">Customer Last Name<span>*</span></label>
-                <input id="lastName" name="lastName" type="text" required><span></span>
-            </div>
+            <!-- first name -->
+            <label for="firstName">Customer First Name<span></span></label>
+            <input id="firstName" name="firstName" type="text" >
+            <!-- last -->
+            <label for="lastName">Customer Last Name<span></span></label>
+            <input id="lastName" name="lastName" type="text" >
             <!-- phone -->
-            <div>
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="text"><span></span>
-            </div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel">
             <!-- email -->
-            <div>
-                <label class="required" for="email">Email<span>*</span></label>
-                <input id="email" name="email" type="text" required><span></span>
-            </div>
+                <label for="email">Email<span></span></label>
+                <input id="email" name="email" type="email" >
             <!-- address -->
-            <div>
-                <label class="required" for="address">Street Address<span>*</span></label>
-                <input id="address" name="address" type="text" required><span></span>
-            </div>
-            <div>
-                <label for="address2">Street Address Part 2</label>
-                <input id="address2" name="address2" type="text"><span></span>
-            </div>
+            <label for="address">Street Address<span></span></label>
+            <input id="address" name="address" type="text" >
+            <label for="address2">Street Address Part 2</label>
+            <input id="address2" name="address2" type="text">
             <!-- city -->
-            <div>
-                <label class="required" for="city">City<span>*</span></label>
-                <input id="city" name="city" type="text" required><span></span>
-            </div>
+            <label for="city">City<span></span></label>
+            <input id="city" name="city" type="text" >
             <!-- zip -->
-            <div>
-                <label class="required" for="zip">Zipcode<span>*</span></label>
-                <input name="zip" id="zip" type="text" required><span></span>
-            </div>
+            <label for="zip">Zipcode<span></span></label>
+            <input name="zip" id="zip" type="text" >
             <!-- estimator -->
-            <div>
-                <label class="required" for="estimator">Estimator<span>*</span></label>
-                <input id="estimator" name="estimator" type="text" value="Jeff" required><span></span>
-            </div>
+            <label for="estimator">Estimator<span></span></label>
+            <input id="estimator" name="estimator" type="text" value="Jeff">
             <!-- date -->
-            <div>
-                <label class="required" for="date">Date<span>*</span></label>
-                <input id="date" name="date" type="date" required><span></span>
-            </div>
+                <label for="date">Date<span></span></label>
+                <input id="date" name="date" type="date">
             <div id="submission">
                 <input type="submit" value="Continue to Add Rooms">
             </div>

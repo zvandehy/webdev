@@ -38,5 +38,31 @@
 			"</div>"
 		],
 		"description": "div with required text input"
+	},
+	"SpaceType": {
+		"scope": "html",
+		"prefix": "spaceType",
+		"body": [
+			"<!-- $1 -->",
+			"<div class=\"spaceType\">",
+			"\t<a href=\"/spaceDetails.html\">",
+			"\t\t<div class=\"cover\"></div>",
+			"\t\t<div class=\"spaceName\">$1</div>",
+			"\t\t<img src=\"./src/bedroom.jpg\" alt=\"$1 Img\">",
+			"\t</a>",
+			"</div>"
+		]
+	},
+	"HandleCounter": {
+		"scope": "html",
+		"prefix": "counter",
+		"body": [
+			"<!-- $1 spinner -->",
+			"\t<div class=\"handle-counter\">",
+			"\t\t<button type=\"button\" class=\"counter-minus btn\">-</button>",
+			"\t\t<input id=\"$1\" name=\"$1\" type=\"text\" value=\"0\"><span></span>",
+			"\t\t<button type=\"button\" class=\"counter-plus btn\">+</button>",
+			"\t</div>",
+		]
 	}
 }

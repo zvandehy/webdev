@@ -1,0 +1,142 @@
+/* Collapsible, clickable headers */
+.sectionHeader {
+    grid-column: 1/3;
+    text-align: start;
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:11px;
+    padding-right:11px;
+    margin-bottom:0px;
+    cursor: pointer;
+
+    border-bottom: solid 1px rgb(38, 44, 70);
+}
+
+.sectionHeader > span {
+    display: inline-block;
+    padding-left: 10px;
+    font-size:x-large;
+} 
+
+.sectionHeader > h2 {
+    display:inline-block;
+    padding-left:10px;
+}
+
+.sectionHeader, .inputs {
+    width:70%;
+}
+
+/* Collapsible area with text inputs */
+.inputs {
+    border: 1px solid #aaa;
+    background-color:  rgba(41, 128, 185, .3);
+    margin-bottom: 50px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px 10px;
+    
+    grid-template-columns: auto auto auto;
+    row-gap: 25px;
+
+    display:none;
+}
+
+#critical > .inputs {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+#critical {
+    margin-top:10px;
+}
+
+#wallsCeilings > .inputs {
+    grid-template-columns: auto auto;
+}
+#other > .inputs {
+    grid-template-columns: auto auto;
+}
+
+/* Inputs covering both columns */
+.double {
+    grid-column: 1/3;
+    text-align:start;
+}
+
+.double label {
+    display: inline;
+    width:25px;
+}
+
+.choices input {
+    display: inline;
+    width:15px;
+}
+
+
+/* Labels and text inputs */
+label {
+    font-weight: bold;
+    display:block;
+    text-align: start;
+    margin-bottom:5px;
+    /* padding: 5px 20%; */
+    /* padding-top: 10px; */
+}
+
+select {
+    height:25px;
+}
+
+/* Feet Units */
+.ft input ,.hrs input, .ct input, .handle-counter input{
+    text-align:center;
+    width:100px;
+}
+
+.ft input ~ span, .hrs input ~ span, .ct input ~ span {
+    margin-left:-67px;
+    font-size: small;
+    line-height: 26px;
+}
+
+.ft input ~ span::before {
+    content:"ft";
+}
+
+.ct input ~ span::before {
+    content:"coats";
+}
+
+.hrs input ~ span::before {
+    content:"hrs";
+}
+
+.secondInp {
+    align-self: end;
+}
+
+/* Submission Button */
+input[type="submit"]:hover {
+    color:black;
+    font-weight: bold;
+    
+}
+
+input[type="submit"] {
+    width:40%;
+    background-color: #2980b9;
+    color:white;
+    cursor: pointer;
+    height:35px;
+    margin-bottom: 200px;
+    margin-top: 15px;
+    margin-left:30%;
+    display: inline-block;
+    border:none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+

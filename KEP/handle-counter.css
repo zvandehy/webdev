@@ -1,0 +1,55 @@
+/* cite: https://www.jqueryscript.net/form/jQuery-Plugin-To-Create-Increment-Decrement-Input-Spinners-handleCounter.html */
+@charset "UTF-8";
+
+.counter-minus, .counter-plus {
+  cursor: pointer;
+  text-align:center;
+  background-color: #65a157;
+  height:27px;
+}
+
+.counter-minus:hover, .counter-plus:hover,.counter-minus:focus, .counter-plus:focus {
+  cursor: pointer;
+  text-align:center;
+  font-weight: bold;
+  color:black;
+}
+
+.handle-counter { 
+  overflow: hidden;
+ }
+
+.handle-counter .counter-minus,  .handle-counter .counter-plus,  .handle-counter input {
+  float: left;
+  text-align: center;
+}
+
+.handle-counter input {
+  height:23px;
+  border:1px solid rgb(58, 63, 85);
+  border-left:none;
+  border-right:none;
+  font-size: small;
+  line-height: 30px;
+}
+
+.btn {
+  padding: 5px 12px;
+  border: 1px solid rgb(58, 63, 85);
+  color: white;
+}
+
+.counter-minus {
+  border-right:none;
+  background-color: #e74d3cd0;
+}
+
+.counter-plus {
+  border-left:none;
+  background-color: #65a157d0;
+}
+
+.btn:disabled, .btn:disabled:hover {
+  background-color: darkgrey;
+  cursor: not-allowed;
+}

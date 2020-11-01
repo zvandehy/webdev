@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="default.js"></script>
+    <script src="roomDetails.js"></script>
+    <script src="handleCounter.js"></script>
+    <link rel="stylesheet" href="handle-counter.css">
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="roomDetails.css">
+    <!-- <link rel="stylesheet" href="footer.css"> -->
+    <title>Room Details</title>
+</head>
+<body>
+    <header id="header"></header>
+
+    <h1 id="pageHeader">RoomType: Unique Room Name</h1>
+
+    <form action="/roomTypes.html" method="GET">
+        
+        <section id="critical">
+            <div class="sectionHeader gradient1">
+                <span>+</span>
+                <h2>Room & Size</h2>
+            </div>
+            <div class="inputs">
+                <!-- length -->
+                <div class="fInp ft">
+                    <label for="length">Length</label>
+                    <!-- spinner -->
+                    <div class="handle-counter">
+                        <button type="button" class="counter-minus btn">-</button>
+                        <input id="length" name="length" type="text" value="0"><span></span>
+                        <button type="button" class="counter-plus btn">+</button>
+                    </div>
+                </div>
+                <!-- width -->
+                <div class="fInp ft">
+                    <label for="width">Width</label>
+                    <!-- width spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="width" name="width" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- height -->
+                <div class="fInp ft">
+                    <label for="height">Height</label>
+                    <!-- height spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="height" name="height" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- maskCover -->
+                <div class="fInp hrs">
+                    <label for="maskCover">Mask & Cover</label>
+                    <!-- maskCover spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="maskCover" name="maskCover" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                 <!-- rrHardware -->
+                <div class="fInp hrs">
+                    <label for="rrHardware">R&R Hardware & Lighting</label>
+                    <!-- rrHardware spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="rrHardware" name="rrHardware" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- dailySetupBreakdown -->
+                <div class="fInp hrs">
+                    <label for="dailySetupBreakdown">Daily Setup & Breakdown</label>
+                    <!-- dailySetupBreakdown spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="dailySetupBreakdown" name="dailySetupBreakdown" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- cleanTouchup -->
+                <div class="fInp hrs">
+                    <label for="cleanTouchup">Clean & Touchup</label>
+                    <!-- cleanTouchup spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="cleanTouchup" name="cleanTouchup" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="misc">
+            <div class="sectionHeader gradient2">
+                <span>+</span>
+                <h2>Miscelleneous</h2>
+            </div>
+            <div class="inputs">
+                <!-- furnitureTreatment -->
+                <div class="fInp misc hrs">
+                    <label for="furnitureTreatment">Furniture Treatment</label>
+                    <!-- furnitureTreatment spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="furnitureTreatment" name="furnitureTreatment" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- windowTreatment -->
+                <div class="fInp misc hrs">
+                    <label for="windowTreatment">Window Treatment</label>
+                    <!-- windowTreatment spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowTreatment" name="windowTreatment" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                
+                <!-- wallpaperRemoval -->
+                <div class="fInp misc ct">
+                    <label for="wallpaperRemovalCoats">Wallpaper Removal</label>
+                    <!-- wallpaperRemovalCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="wallpaperRemovalCoats" name="wallpaperRemovalCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- prepWoodwork -->
+                <div class="fInp misc hrs">
+                    <label for="prepWoodwork">Prep Woodwork</label>
+                    <!-- prepWoodwork spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="prepWoodwork" name="prepWoodwork" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- patchTexture -->
+                <div class="fInp misc hrs">
+                    <label for="patchTexture">Patch & Texture</label>
+                    <!-- patchTexture spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="patchTexture" name="patchTexture" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section id="wallsCeilings">
+            <div class="sectionHeader gradient3">
+                <span>+</span>
+                <h2>Walls & Ceilings</h2>
+            </div>
+            <div class="inputs">
+                <!-- Walls Height -->
+                <div class="fInp double">
+                    <label for="wallsHeight">Walls: Height</label>
+                    <div class="choices">
+                        <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft">
+                        <label for="0to9ft">0-9ft</label><br>
+                        <input type="radio" name="wallsHeight" id="9to14ft" value="9to14ft">
+                        <label for="0to9ft">9-14ft</label><br>
+                        <input type="radio" name="wallsHeight" id="14ftPlus" value="14ftPlus">
+                        <label for="0to9ft">14+ft</label>
+                    </div>
+                </div>
+                <!-- wallsPrime -->
+                <div class="fInp double ct">
+                    <label for="wallsPrimeCoats">Walls: Prime</label>
+                    <!-- wallsPrimeCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="wallsPrimeCoats" name="wallsPrimeCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- wallsPaint -->
+                <div class="fInp ct">
+                    <label for="wallsPaintCoats">Walls: Paint</label>
+                    <!-- wallsPaintCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="wallsPaintCoats" name="wallsPaintCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="wallsPaintFinish" name="wallsPaintFinish">
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- ceilingsPrime -->
+                <div class="fInp ct double">
+                    <label for="ceilingsPrime">Ceilings: Prime</label>
+                    <!-- ceilingsPrime spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="ceilingsPrime" name="ceilingsPrime" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- ceilingsPaint -->
+                <div class="fInp ct">
+                    <label for="ceilingsPaintCoats">Ceilings: Paint</label>
+                    <!-- ceilingsPaintCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="ceilingsPaintCoats" name="ceilingsPaintCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="ceilingsPaintFinish" name="ceilingsPaintFinish">
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- bullnoseAccent -->
+                <div class="fInp hrs">
+                    <label for="bullnoseAccent">Bullnose / Accent Wall</label>
+                    <!-- bullnoseAccent spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="bullnoseAccent" name="bullnoseAccent" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- closets -->
+                <div class="fInp hrs">
+                    <label for="closets">Closets</label>
+                    <!-- closets spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="closets" name="closets" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section id="doors">
+            <div class="sectionHeader gradient4">
+                <span>+</span>
+                <h2>Doors</h2>
+            </div>
+            <div class="inputs">
+                <!-- doorsFlat -->
+                <div class="fInp">
+                    <label for="doorsFlat">Doors: Flat</label>
+                    <!-- doorsFlat spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsFlat" name="doorsFlat" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- doorsFlatCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsFlatCoats" name="doorsFlatCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="doorsFlatFinish" name="doorsFlatFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- doorsPaneled -->
+                <div class="fInp">
+                    <label for="doorsPaneled">Doors: Paneled</label>
+                    <!-- doorsPaneled spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsPaneled" name="doorsPaneled" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- doorsPaneledCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsPaneledCoats" name="doorsPaneledCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="doorsPaneledFinish" name="doorsPaneledFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- doorsFrench -->
+                <div class="fInp">
+                    <label for="doorsFrench">Doors: French</label>
+                    <!-- doorsFrench spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsFrench" name="doorsFrench" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- doorsFrenchCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorsFrenchCoats" name="doorsFrenchCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="doorsFrenchFinish" name="doorsFrenchFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- doorCasings -->
+                <div class="fInp">
+                    <label for="doorCasings">Doors: Casings</label>
+                    <!-- doorCasings spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorCasings" name="doorCasings" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- doorCasingsCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="doorCasingsCoats" name="doorCasingsCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="doorsCasingsFinish" name="doorsCasingsFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- baseboard -->
+                <div class="fInp double ct">
+                    <label for="baseboard">Baseboards</label>
+                    <!-- baseboard spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="baseboard" name="baseboard" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section id="windows">
+            <div class="sectionHeader gradient5">
+                <span>+</span>
+                <h2>Windows</h2>
+            </div>
+            <div class="inputs">
+                <!-- windowsCasement -->
+                <div class="fInp">
+                    <label for="windowsCasement">Windows: Casement</label>
+                    <!-- windowsCasement spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsCasement" name="windowsCasement" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- windowsCasementCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsCasementCoats" name="windowsCasementCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="windowsCasementFinish" name="windowsCasementFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- windows11 -->
+                <div class="fInp">
+                    <label for="windows11">Windows: 1/1</label>
+                    <!-- windows11 spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windows11" name="windows11" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- windows11Coats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windows11Coats" name="windows11Coats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="windows11Finish" name="windows11Finish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- windows37Panel -->
+                <div class="fInp">
+                    <label for="windows37Panel">Windows: 3/7 Panel</label>
+                    <!-- windows37Panel spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windows37Panel" name="windows37Panel" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- windows37PanelCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windows37PanelCoats" name="windows37PanelCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="windows37PanelFinish" name="windows37PanelFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- windowsSingleFrame -->
+                <div class="fInp">
+                    <label for="windowsSingleFrame">Windows: Single Frame</label>
+                    <!-- windowsSingleFrame spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsSingleFrame" name="windowsSingleFrame" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp ct">
+                    <!-- windowsSingleFrameCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsSingleFrameCoats" name="windowsSingleFrameCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="windowsSingleFrameFinish" name="windowsSingleFrameFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- windowsSills -->
+                <div class="fInp">
+                    <label for="windowsSills">Windows: Sills</label>
+                    <!-- windowsSills spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsSills" name="windowsSills" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div> 
+                <div class="fInp secondInp ct">
+                    <!-- windowsSillsCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="windowsSillsCoats" name="windowsSillsCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="windowsSillsFinish" name="windowsSillsFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <div class="choices double ">
+                    <input type="radio" name="aprons" id="hasAprons" value="hasAprons">
+                    <label for="hasAprons">Has Aprons</label>
+                    <input type="radio" name="aprons" id="noAprons" value="noAprons">
+                    <label for="noAprons">No Aprons</label>
+                </div>
+            </div>
+        </section>
+        
+        <section id="other">
+            <div class="sectionHeader gradient6">
+                <span>+</span>
+                <h2>Other</h2>
+            </div>
+                <div class="inputs">
+                <!-- chairRail -->
+                <div class="fInp cts">
+                    <label for="chairRailCoats">Chair Rail</label>
+                    <!-- chairRailCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="chairRailCoats" name="chairRailCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="chairRailFinish" name="chairRailFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- crownMolding -->
+                <div class="fInp">
+                    <label for="crownMoldingCoats">Crown Molding</label>
+                    <!-- crownMoldingCoats spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="crownMoldingCoats" name="crownMoldingCoats" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <div class="fInp secondInp">
+                    <select id="crownMoldingFinish" name="crownMoldingFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
+                </div>
+                <!-- TODO: Make a separate form if Cabinetry is needed -->
+                <!-- cabinetry -->
+                <div class="fInp">
+                    <label for="cabinetry">Cabinetry</label>
+                    <!-- cabinetry spinner -->
+                        <div class="handle-counter">
+                            <button type="button" class="counter-minus btn">-</button>
+                            <input id="cabinetry" name="cabinetry" type="text" value="0"><span></span>
+                            <button type="button" class="counter-plus btn">+</button>
+                        </div>
+                </div>
+                <!-- TODO: Add option for "Add another job" (3 "Miscelleneous" options in old excel sheet) -->
+            </div>
+        </section>
+        
+        <input type="submit" value="Continue to Add Rooms">
+
+    </form>
+
+    <footer id="footer"></footer>
+    
+</body>
+</html>
