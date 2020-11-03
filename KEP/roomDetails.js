@@ -44,7 +44,7 @@ function addCounterHandlers() {
         onMaximize: function () {
         }
     }
-    $(".handle-counter").handleCounter(options)
+    // $(".handle-counter").handleCounter(options)
 }
 
 function getChildByClass(node, cls) {

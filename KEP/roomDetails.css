@@ -117,6 +117,48 @@ select {
     align-self: end;
 }
 
+.finish {
+    position:relative;
+}
+
+/* Dropdown icon */
+.finish:after {
+    content: '>';
+    font-size: 25px;
+    color: black;
+    transform: rotate(90deg);
+    right:32%;
+    /*Adjust for position however you want*/
+    top: -1px;
+    border-bottom: 1px solid #999;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+  
+.finish select {
+    /* remove old select appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    display: block;
+    width: 70%;
+    height: 27px;
+    color: black;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+select {
+    height: 27px;
+    border:none;
+    border-radius: 0px;
+    background-color: rgb(209, 229, 243);
+}
+
+
 /* Submission Button */
 input[type="submit"]:hover {
     color:black;

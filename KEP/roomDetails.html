@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="default.js"></script>
-    <script src="roomDetails.js"></script>
-    <script src="handleCounter.js"></script>
-    <link rel="stylesheet" href="handle-counter.css">
-    <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="roomDetails.css">
+    <script src="./default.js"></script>
+    <script src="./roomDetails.js"></script>
+    <script src="./handleCounter.js"></script>
+    <link rel="stylesheet" href="./handle-counter.css">
+    <link rel="stylesheet" href="./default.css">
+    <link rel="stylesheet" href="./roomDetails.css">
     <!-- <link rel="stylesheet" href="footer.css"> -->
     <title>Room Details</title>
 </head>
@@ -18,7 +18,7 @@
 
     <h1 id="pageHeader">RoomType: Unique Room Name</h1>
 
-    <form action="/roomTypes.html" method="GET">
+    <form action="./roomTypes.html" method="GET">
         
         <section id="critical">
             <div class="sectionHeader gradient1">
@@ -166,7 +166,7 @@
             <div class="inputs">
                 <!-- Walls Height -->
                 <div class="fInp double">
-                    <label for="wallsHeight">Walls: Height</label>
+                    <label>Walls: Height</label>
                     <div class="choices">
                         <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft">
                         <label for="0to9ft">0-9ft</label><br>
@@ -196,7 +196,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="wallsPaintFinish" name="wallsPaintFinish">
                         <option value="flat">Flat</option>
                         <option value="eggshell">Eggshell</option>
@@ -225,7 +225,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="ceilingsPaintFinish" name="ceilingsPaintFinish">
                         <option value="flat">Flat</option>
                         <option value="eggshell">Eggshell</option>
@@ -280,7 +280,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="doorsFlatFinish" name="doorsFlatFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -307,7 +307,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="doorsPaneledFinish" name="doorsPaneledFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -334,7 +334,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="doorsFrenchFinish" name="doorsFrenchFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -361,7 +361,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="doorsCasingsFinish" name="doorsCasingsFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -406,7 +406,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="windowsCasementFinish" name="windowsCasementFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -433,7 +433,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="windows11Finish" name="windows11Finish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -460,7 +460,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="windows37PanelFinish" name="windows37PanelFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -487,7 +487,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="windowsSingleFrameFinish" name="windowsSingleFrameFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -514,7 +514,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="windowsSillsFinish" name="windowsSillsFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -539,7 +539,7 @@
             </div>
                 <div class="inputs">
                 <!-- chairRail -->
-                <div class="fInp cts">
+                <div class="fInp ct">
                     <label for="chairRailCoats">Chair Rail</label>
                     <!-- chairRailCoats spinner -->
                         <div class="handle-counter">
@@ -548,7 +548,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="chairRailFinish" name="chairRailFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -558,7 +558,7 @@
                     </select><span></span>
                 </div>
                 <!-- crownMolding -->
-                <div class="fInp">
+                <div class="fInp ct">
                     <label for="crownMoldingCoats">Crown Molding</label>
                     <!-- crownMoldingCoats spinner -->
                         <div class="handle-counter">
@@ -567,7 +567,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                <div class="fInp secondInp">
+                <div class="fInp secondInp finish">
                     <select id="crownMoldingFinish" name="crownMoldingFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
@@ -578,7 +578,7 @@
                 </div>
                 <!-- TODO: Make a separate form if Cabinetry is needed -->
                 <!-- cabinetry -->
-                <div class="fInp">
+                <div class="fInp hrs">
                     <label for="cabinetry">Cabinetry</label>
                     <!-- cabinetry spinner -->
                         <div class="handle-counter">

@@ -1,0 +1,48 @@
+#pageContent {
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#nextPage {
+    text-align: center;
+    width:100%;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+#nextPage a {
+    text-decoration: none;
+    width:100%;
+    background-color: #e74c3c;
+    color:white;
+    padding:5px;
+    border-radius:10px;
+}
+
+#nextPage a:hover {
+    font-weight:bold;
+}
+
+#photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height:50%;
+}
+
+#pageContent > img {
+    float:right;
+    width:75px;
+    height:75px;
+    border-radius:10px;
+    border:1px solid black;
+}
+
+#photos img {
+    flex: 0 0 auto;
+    margin: 1%;
+    width: 23%;
+    align-self: end;
+    border:1px solid black;
+}

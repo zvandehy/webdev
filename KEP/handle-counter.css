@@ -1,6 +1,4 @@
 /* cite: https://www.jqueryscript.net/form/jQuery-Plugin-To-Create-Increment-Decrement-Input-Spinners-handleCounter.html */
-@charset "UTF-8";
-
 .counter-minus, .counter-plus {
   cursor: pointer;
   text-align:center;

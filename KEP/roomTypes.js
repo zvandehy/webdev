@@ -11,10 +11,10 @@ rooms.set("Passageways", ["Hallway", "Stairway", "Entry Area"])
 
 
 
-$(document).ready(function () {
+window.onload = function () {
     generateRoomTypes();
     getModalReady();
-});
+};
 
 function getModalReady() {
     //modal
