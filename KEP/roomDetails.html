@@ -76,13 +76,14 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
+                <div></div>
                 <!-- dailySetupBreakdown -->
                 <div class="fInp hrs">
-                    <label for="dailySetupBreakdown">Daily Setup & Breakdown</label>
+                    <label for="roomSetupBreakdown">Room Setup & Breakdown</label>
                     <!-- dailySetupBreakdown spinner -->
                         <div class="handle-counter">
                             <button type="button" class="counter-minus btn">-</button>
-                            <input id="dailySetupBreakdown" name="dailySetupBreakdown" type="text" value="0"><span></span>
+                            <input id="roomSetupBreakdown" name="roomSetupBreakdown" type="text" value="0"><span></span>
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
@@ -122,17 +123,6 @@
                         <div class="handle-counter">
                             <button type="button" class="counter-minus btn">-</button>
                             <input id="windowTreatment" name="windowTreatment" type="text" value="0"><span></span>
-                            <button type="button" class="counter-plus btn">+</button>
-                        </div>
-                </div>
-                
-                <!-- wallpaperRemoval -->
-                <div class="fInp misc ct">
-                    <label for="wallpaperRemovalCoats">Wallpaper Removal</label>
-                    <!-- wallpaperRemovalCoats spinner -->
-                        <div class="handle-counter">
-                            <button type="button" class="counter-minus btn">-</button>
-                            <input id="wallpaperRemovalCoats" name="wallpaperRemovalCoats" type="text" value="0"><span></span>
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
@@ -371,14 +361,31 @@
                     </select><span></span>
                 </div>
                 <!-- baseboard -->
-                <div class="fInp double ct">
+                
+                <div class="fInp finish">
                     <label for="baseboard">Baseboards</label>
+                    <select id="baseboardType" name="baseboardType">
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                    </select><span></span>
+                </div>
+                <div class="secondInp ct">
                     <!-- baseboard spinner -->
                         <div class="handle-counter">
                             <button type="button" class="counter-minus btn">-</button>
                             <input id="baseboard" name="baseboard" type="text" value="0"><span></span>
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
+                </div>
+                <div class="fInp secondInp finish">
+                    <select id="baseboardFinish" name="baseboardFinish">
+                        <option value="semigloss">Semi-Gloss</option>
+                        <option value="flat">Flat</option>
+                        <option value="eggshell">Eggshell</option>
+                        <option value="pearl">Pearl</option>
+                        <option value="clearcoat">Clear Coat</option>
+                    </select><span></span>
                 </div>
             </div>
         </section>
@@ -390,11 +397,11 @@
             <div class="inputs">
                 <!-- windowsCasement -->
                 <div class="fInp">
-                    <label for="windowsCasement">Windows: Casement</label>
+                    <label for="windowsCasings">Windows: Casings</label>
                     <!-- windowsCasement spinner -->
                         <div class="handle-counter">
                             <button type="button" class="counter-minus btn">-</button>
-                            <input id="windowsCasement" name="windowsCasement" type="text" value="0"><span></span>
+                            <input id="windowsCasings" name="windowsCasings" type="text" value="0"><span></span>
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
@@ -402,12 +409,12 @@
                     <!-- windowsCasementCoats spinner -->
                         <div class="handle-counter">
                             <button type="button" class="counter-minus btn">-</button>
-                            <input id="windowsCasementCoats" name="windowsCasementCoats" type="text" value="0"><span></span>
+                            <input id="windowsCasingsCoats" name="windowsCasingsCoats" type="text" value="0"><span></span>
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
                 <div class="fInp secondInp finish">
-                    <select id="windowsCasementFinish" name="windowsCasementFinish">
+                    <select id="windowsCasingsFinish" name="windowsCasingsFinish">
                         <option value="semigloss">Semi-Gloss</option>
                         <option value="flat">Flat</option>
                         <option value="eggshell">Eggshell</option>

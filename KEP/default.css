@@ -40,6 +40,10 @@ h1#kep {
     width:300px;
     font-weight: bold;
 }
+#kepLink {
+    display: inherit;
+}
+
 #buttonWrap {
     text-align: center;
 }

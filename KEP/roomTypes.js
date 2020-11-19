@@ -1,12 +1,12 @@
 var rooms = new Map()
 rooms.set("Bedroom", ["Bedroom", "Master Bedroom"])
 rooms.set("Bathroom", ["Bathroom", "Master Bathroom", "Jack-n-Jill Bathroom", "Commode Room", "Powder Room"])
-rooms.set("Living Room", ["Family Room", "Den", "Loft"])
-rooms.set("Kitchen", ["Kitchen", "Kitchen Family Room"])
+rooms.set("Living Room", ["Living Room", "Family Room", "Den", "Loft"])
+rooms.set("Kitchen", ["Kitchen", "Kitchen & Family Room"])
 rooms.set("Dining Room", ["Dining Room"])
 rooms.set("Office", ["Office"])
-rooms.set("Closet", ["Closet"])
-rooms.set("Passageways", ["Hallway", "Stairway", "Entry Area"])
+rooms.set("Closet", ["Closet", "Master Closet"])
+rooms.set("Passageways", ["Hallway", "Stairway", "Entry Area", "Landing"])
 // rooms.set("Other", ["Other"])
 
 
