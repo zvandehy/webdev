@@ -1,0 +1,86 @@
+/* jQuery Plugin: Modal */
+/* Modal SubType Buttons */
+.subType {
+    margin:10px;
+    margin-top:0px;
+    text-decoration: none;
+    
+    flex: 1 1 auto;
+    width:3%;
+    max-width: 180px;
+    max-height: 90px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #009eaa;
+    line-height: 25px;
+    padding: 3% 0;
+    background-color: #009eaa;
+    color:white;
+    font-weight: bold;
+}
+
+.subType:hover, .selected {
+    background-color: #2980b9;
+    border-color:   #2980b9;
+    cursor:pointer;
+}
+
+.selected span::after {
+    content:"selected";
+}
+
+.selected span {
+    position:relative;
+    font-size: x-small;
+    bottom:0px;
+    display: block;
+}
+
+
+.subtypes {
+    display:flex;
+    justify-content: center;
+    height:100px;
+    margin-top:25px;
+}
+
+.modal-header {
+    margin-top:10px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.modal-bottom {
+    text-align: center;
+    color:black;
+    margin-top:15px;
+}
+
+.modal-bottom label {
+    margin-right:5px;
+}
+
+.modal-bottom input {
+    height:25px;
+    width:200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.modal-bottom button {
+    height:30px;
+    width: 120px;
+    border: 1px solid  #e74c3c;
+    color: white;
+    background-color:#e74c3c;
+    border-radius: 10px;
+}
+
+.modal-bottom button:hover {
+    cursor:pointer;
+}
+
+.modal {
+    max-width: none;
+    width:none;
+}

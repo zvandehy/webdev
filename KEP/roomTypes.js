@@ -20,18 +20,6 @@ function getModalReady() {
     //modal
     var modal = document.getElementById("roomTypeModal")
 
-    //close modal when click off of modal
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    //close modal when clicking the "x" close
-    document.getElementsByClassName("close")[0].onclick = function () {
-        modal.style.display = "none";
-    }
-
     //roomType elements displayed as photos
     var roomTypes = document.getElementsByClassName("roomType")
 
@@ -41,7 +29,6 @@ function getModalReady() {
         // display appropriate modal when clicking roomtype
         roomType.onclick = function () {
             //remove old modal children
-            const modalContent = document.getElementsByClassName("modal-content")[0]
             const subTypesDiv = document.getElementsByClassName("subtypes")[0]
             removeAllChildNodes(subTypesDiv)
 
@@ -69,7 +56,6 @@ function getModalReady() {
             }
 
             //display modal
-            modal.style.display = "block"
             nameInput.value = document.getElementsByClassName("selected")[0].textContent + " 1"
             nameInput.focus()
         }
@@ -97,8 +83,10 @@ function getChildByClass(node, targetClass) {
 function generateRoomTypes() {
     for (const roomType of rooms.keys()) {
 
-        var roomTypeDiv = document.createElement("div")
+        var roomTypeDiv = document.createElement("a")
         roomTypeDiv.className = "roomType"
+        roomTypeDiv.href = "#roomTypeModal";
+        roomTypeDiv.rel = "modal:open";
 
         var cover = document.createElement("div")
         cover.className = "cover"
@@ -115,6 +103,8 @@ function generateRoomTypes() {
         roomTypeDiv.appendChild(cover)
         roomTypeDiv.appendChild(roomName)
         roomTypeDiv.appendChild(imgNode)
+
+
 
         document.getElementById("typesGrid").appendChild(roomTypeDiv)
     }

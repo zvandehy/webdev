@@ -59,20 +59,7 @@ function addCounterHandlers() {
 
     var $counters = $(".handle-counter")
     for (var i = 0; i < $counters.length; i++) {
-        // Add handleCounter function
+        // Add handleCounter function (see handleCounter.js plugin file)
         $($counters[i]).handleCounter(options);
-        // $($counters[i]).on("focus", function() {
-        //     $(this).find("input").
-        // });
     }
-}
-
-function getChildByClass(node, cls) {
-    const children = node.childNodes
-    for (const child of children) {
-        if (child.className == cls) {
-            return child
-        }
-    }
-    return null
 }
