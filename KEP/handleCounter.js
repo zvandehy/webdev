@@ -1,4 +1,5 @@
 /**
+ * jQuery Plugin
  * handle counter spinner plugin
  * cite: https://www.jqueryscript.net/form/jQuery-Plugin-To-Create-Increment-Decrement-Input-Spinners-handleCounter.html
  */

@@ -14,16 +14,28 @@ $(document).ready(function () {
         }
     }
 
-    //open and close sections, only one section open at a time
-    var sectionHeaders = document.getElementsByTagName("section")
-    for (const node of sectionHeaders) {
-        node.onclick = function () {
-            for (const oNode of sectionHeaders) {
-                getChildByClass(oNode, "inputs").style.display = "none"
-            }
-            getChildByClass(node, "inputs").style.display = "grid"
+    // jQuery UI: Accordion
+    $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+        animate: 400,
+        icons: {
+            header: "ui-icon-plus",
+            activeHeader: "ui-icon-minus",
         }
     }
+    );
+
+    //jQuery UI: SelectMenu
+    $("select").each(function () { $(this).selectmenu(); })
+
+    //jQuery UI: Checkboxradio
+    $("input[type=radio]").each(function () {
+        $(this).checkboxradio({
+            icon: false,
+        }
+        );
+    })
 
     //disable "Enter" from submitting form cite:https://stackoverflow.com/questions/895171/prevent-users-from-submitting-a-form-by-hitting-enter
     $(window).keydown(function (event) {

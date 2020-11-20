@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
     <script src="./default.js"></script>
     <script src="./roomDetails.js"></script>
     <script src="./handleCounter.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./handle-counter.css">
     <link rel="stylesheet" href="./default.css">
     <link rel="stylesheet" href="./roomDetails.css">
@@ -19,12 +21,9 @@
     <h1 id="pageHeader">RoomType: Unique Room Name</h1>
 
     <form action="./roomTypes.html" method="GET">
-        
-        <section id="critical">
-            <div class="sectionHeader gradient1">
-                <span>+</span>
-                <h2>Room & Size</h2>
-            </div>
+        <!-- jQuery UI -->
+        <div id="accordion">
+            <h3 class="sectionHeader gradient1">Room & Size</h3>
             <div class="inputs">
                 <!-- length -->
                 <div class="fInp ft">
@@ -66,7 +65,7 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
-                 <!-- rrHardware -->
+                <!-- rrHardware -->
                 <div class="fInp hrs">
                     <label for="rrHardware">R&R Hardware & Lighting</label>
                     <!-- rrHardware spinner -->
@@ -97,14 +96,9 @@
                             <button type="button" class="counter-plus btn">+</button>
                         </div>
                 </div>
+            </div>
 
-            </div>
-        </section>
-        <section id="misc">
-            <div class="sectionHeader gradient2">
-                <span>+</span>
-                <h2>Miscelleneous</h2>
-            </div>
+            <h3 id="misc" class="sectionHeader gradient2">Miscelleneous</h3>
             <div class="inputs">
                 <!-- furnitureTreatment -->
                 <div class="fInp misc hrs">
@@ -147,27 +141,27 @@
                         </div>
                 </div>
             </div>
-        </section>
-        <section id="wallsCeilings">
-            <div class="sectionHeader gradient3">
-                <span>+</span>
-                <h2>Walls & Ceilings</h2>
-            </div>
+
+            <h3 class="sectionHeader gradient3">Walls & Ceilings</h3>
             <div class="inputs">
                 <!-- Walls Height -->
                 <div class="fInp double">
-                    <label>Walls: Height</label>
                     <div class="choices">
-                        <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft">
-                        <label for="0to9ft">0-9ft</label><br>
-                        <input type="radio" name="wallsHeight" id="9to14ft" value="9to14ft">
-                        <label for="0to9ft">9-14ft</label><br>
-                        <input type="radio" name="wallsHeight" id="14ftPlus" value="14ftPlus">
-                        <label for="0to9ft">14+ft</label>
+                        <fieldset>
+                          <legend><strong>Select a Wall Height</strong></legend>
+                          <label for="0to9ft">0-9</label>
+                          <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft">
+                          <label for="9to14ft">9-14</label>
+                          <input type="radio" name="wallsHeight" id="9to14ft" value="9to14ft">
+                          <label for="14ftPlus">14+</label>
+                          <input type="radio" name="wallsHeight" id="14ftPlus" value="14ftPlus">
+                          feet
+                        </fieldset>
                     </div>
                 </div>
+                <div></div>
                 <!-- wallsPrime -->
-                <div class="fInp double ct">
+                <div class="fInp ct">
                     <label for="wallsPrimeCoats">Walls: Prime</label>
                     <!-- wallsPrimeCoats spinner -->
                         <div class="handle-counter">
@@ -196,7 +190,7 @@
                     </select><span></span>
                 </div>
                 <!-- ceilingsPrime -->
-                <div class="fInp ct double">
+                <div class="fInp ct">
                     <label for="ceilingsPrime">Ceilings: Prime</label>
                     <!-- ceilingsPrime spinner -->
                         <div class="handle-counter">
@@ -245,12 +239,8 @@
                         </div>
                 </div>
             </div>
-        </section>
-        <section id="doors">
-            <div class="sectionHeader gradient4">
-                <span>+</span>
-                <h2>Doors</h2>
-            </div>
+
+            <h3 class="sectionHeader gradient4">Doors</h3>
             <div class="inputs">
                 <!-- doorsFlat -->
                 <div class="fInp">
@@ -388,12 +378,8 @@
                     </select><span></span>
                 </div>
             </div>
-        </section>
-        <section id="windows">
-            <div class="sectionHeader gradient5">
-                <span>+</span>
-                <h2>Windows</h2>
-            </div>
+
+            <h3 class="sectionHeader gradient5">Windows</h3>
             <div class="inputs">
                 <!-- windowsCasement -->
                 <div class="fInp">
@@ -537,13 +523,8 @@
                     <label for="noAprons">No Aprons</label>
                 </div>
             </div>
-        </section>
-        
-        <section id="other">
-            <div class="sectionHeader gradient6">
-                <span>+</span>
-                <h2>Other</h2>
-            </div>
+            
+            <h3 id="other" class="sectionHeader gradient6">Other</h3>
                 <div class="inputs">
                 <!-- chairRail -->
                 <div class="fInp ct">
@@ -596,8 +577,7 @@
                 </div>
                 <!-- TODO: Add option for "Add another job" (3 "Miscelleneous" options in old excel sheet) -->
             </div>
-        </section>
-        
+        </div>
         <input type="submit" value="Continue to Add Rooms">
 
     </form>
