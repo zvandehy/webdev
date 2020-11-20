@@ -44,7 +44,15 @@ function addCounterHandlers() {
         onMaximize: function () {
         }
     }
-    // $(".handle-counter").handleCounter(options)
+
+    var $counters = $(".handle-counter")
+    for (var i = 0; i < $counters.length; i++) {
+        // Add handleCounter function
+        $($counters[i]).handleCounter(options);
+        // $($counters[i]).on("focus", function() {
+        //     $(this).find("input").
+        // });
+    }
 }
 
 function getChildByClass(node, cls) {

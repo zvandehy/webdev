@@ -1,5 +1,5 @@
 /**
- * handle counter
+ * handle counter spinner plugin
  * cite: https://www.jqueryscript.net/form/jQuery-Plugin-To-Create-Increment-Decrement-Input-Spinners-handleCounter.html
  */
 ; (function () {
@@ -87,9 +87,8 @@
                 }
             }, 300)
         })
-        $input.focus(function () {
-            var num = $input.val()
-            if (num == 0) $input.select()
+        $input.on("focus", function () {
+            $input.select()
         })
 
         function changeVal(num) {
