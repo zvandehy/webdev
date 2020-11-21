@@ -28,7 +28,7 @@
     <h1 id="pageHeader">RoomType: Unique Room Name</h1>
 
     <form action="./roomTypes.html" method="GET">
-        <!-- jQuery UI -->
+        <!-- jQuery UI: Accordion -->
         <div id="accordion">
             <h3 class="sectionHeader gradient1">Room & Size</h3>
             <div class="inputs">
@@ -149,15 +149,16 @@
                 </div>
             </div>
 
-            <h3 class="sectionHeader gradient3">Walls & Ceilings</h3>
+            <h3 id="walls" class="sectionHeader gradient3">Walls & Ceilings</h3>
             <div class="inputs">
                 <!-- Walls Height -->
                 <div class="fInp double">
                     <div class="choices">
+                        <!-- jQuery UI: CheckboxRadio -->
                         <fieldset>
                           <legend><strong>Select a Wall Height</strong></legend>
                           <label for="0to9ft">0-9</label>
-                          <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft">
+                          <input type="radio" name="wallsHeight" id="0to9ft" value="0to9ft" checked="checked">
                           <label for="9to14ft">9-14</label>
                           <input type="radio" name="wallsHeight" id="9to14ft" value="9to14ft">
                           <label for="14ftPlus">14+</label>
