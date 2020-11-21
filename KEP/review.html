@@ -4,91 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="default.js"></script>
-    <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="review.css">
+    <script src="./default.js"></script>
+    <script src="./review.js"></script>
+    <link rel="stylesheet" href="./default.css">
+    <link rel="stylesheet" href="./review.css">
     <title>Work Summary</title>
 </head>
 <body>
     <header id="header"></header>
     <h1 id="pageHeader">Work Summary</h1>
-    <div class="roomSummary">
-        <table id="roomName1">
-            <thead>
-                <tr><th><a href="roomDetails.html">Room Name</a></th><th>Job Item</th><th>Order</th><th>Coats</th><th>Finish</th><th>Gallons</th><th>Time</th><th>Labor Cost</th></tr>
-            </thead>
-            <!-- Size -->
-            <tr><th rowspan="8">Room & Size</th><td>Length</td><td>x ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Width</td><td>x ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Height</td><td>x ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Linear Feet</td><td>x ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Mask & Cover</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>R&R Hardware and Lighting</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Daily Setup & Breakdown</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Clean & Touchup</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Miscelleneous -->
-            <tr><th rowspan="5">Miscelleneous</th><td>Furniture Treatment</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Window Treatment</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Wallpaper Removal</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Prep Woodwork</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Patch & Texture</td><td>x hrs</td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Walls & Ceilings -->
-            <tr><th rowspan="7">Walls & Ceilings</th><td>Wall height</td><td>x ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Prime Walls</td><td></td><td>x coats</td><td></td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Paint Walls</td><td></td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Prime Ceiling</td><td></td><td>x coats</td><td></td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Paint Ceiling</td><td></td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Bullnose/Accent Wall</td><td></td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Closets</td><td></td><td></td><td></td><td></td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Doors -->
-            <tr><th rowspan="5">Doors</th><td>Flat Doors</td><td>x doors</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Paneled Doors</td><td>x doors</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>French Doors</td><td>x doors</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Door Casings</td><td>x doors</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Baseboards</td><td>x linear ft</td><td>x coats</td><td></td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Windows -->
-            <tr><th rowspan="5">Windows</th><td>Casement</td><td>x windows</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>1/1</td><td>x windows</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>3/7 Panel</td><td>x windows</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Single Frame</td><td>x windows</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Sills (With/Without Aprons)</td><td>x windows</td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Other -->
-            <tr><th rowspan="3">Other</th><td>Chair Rail</td><td></td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Crown Molding</td><td></td><td>x coats</td><td>finish</td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <tr><td>Cabinetry</td><td>x hrs</td><td></td><td></td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-            <!-- Total -->
-            <tr class="totalRow"><th>Total</th><td colspan="4"></td><td>x gals</td><td>x hrs</td><td>$xxx.xx</td></tr>
-        </table>
-    </div>
-    <div class="roomSummary">
-        <table id="roomName2">
-            <thead>
-                <tr><th><a href="roomDetails.html">Room Name 2</a></th><th>Job Item</th><th>Order</th><th>Coats</th><th>Finish</th><th>Gallons</th><th>Time</th><th>Labor Cost</th></tr>
-            </thead>
-            <!-- Size -->
-            <tr class="borderRow"><th rowspan="7">Room & Size</th><td>Length</td><td>9 ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Width</td><td>7 ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Height</td><td>10 ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Linear Feet</td><td>32 ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Mask & Cover</td><td>4 hrs</td><td></td><td></td><td></td><td>2 hrs</td><td></td></tr>
-            <tr><td>Daily Setup & Breakdown</td><td>2 hrs</td><td></td><td></td><td></td><td>2 hrs</td><td></td></tr>
-            <tr><td>Clean & Touchup</td><td>2 hrs</td><td></td><td></td><td></td><td>2 hrs</td><td></td></tr>
-            <!-- Miscelleneous -->
-            <tr class="borderRow"><th rowspan="2">Miscelleneous</th><td>Window Treatment</td><td>2 hrs</td><td></td><td></td><td></td><td>2 hrs</td><td></td></tr>
-            <tr><td>Wallpaper Removal</td><td>3 hrs</td><td></td><td></td><td></td><td>3 hrs</td><td></td></tr>
-            <!-- Walls & Ceilings -->
-            <tr class="borderRow"><th rowspan="4">Walls & Ceilings</th><td>Wall height</td><td>10 ft</td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Prime Walls</td><td></td><td>1 coats</td><td></td><td>.5 gals</td><td>3 hrs</td><td>$100.00</td></tr>
-            <tr><td>Paint Walls</td><td></td><td>2 coats</td><td>Eggshell</td><td>1 gals</td><td>4 hrs</td><td>$256.50</td></tr>
-            <tr><td>Paint Ceiling</td><td></td><td>1 coats</td><td>Eggshell</td><td>.25 gals</td><td>2 hrs</td><td>$124.00</td></tr>
-            <!-- Doors -->
-            <tr class="borderRow"><th rowspan="1">Doors</th><td>Flat Doors</td><td>2 doors</td><td>2 coats</td><td>Eggshell</td><td>.33 gals</td><td>2 hrs</td><td>$86.00</td></tr>
-            <!-- Windows -->
-            <tr class="borderRow"><th rowspan="2">Windows</th><td>3/7 Panel</td><td>3 windows</td><td>1 coats</td><td>Semi-Gloss</td><td>.33 gals</td><td>2 hrs</td><td>$101.00</td></tr>
-            <tr><td>Sills (With Aprons)</td><td>3 windows</td><td>1 coats</td><td>Semi-Gloss</td><td>.25 gals</td><td>1.5 hrs</td><td>$82.25</td></tr>
-            <!-- Other -->
-            <tr class="totalRow borderRow"><th>Total</th><td colspan="4"></td><td>3 gals</td><td>25.5 hrs</td><td>$749.75</td></tr>
-        </table>
+    <div id="summaries">
+        
     </div>
     <div id="totalSummary">
         <table>
