@@ -1,21 +1,22 @@
 $(document).ready(function () {
+    // This JSON file simulates a request to a database/api that stores information about orders
+    // that the estimator would have entered into the room description page.
     var url = "./orders.json";
-    console.log("ready")
-
-    var request = new XMLHttpRequest();
-    request.open('GET', url);
-    request.onload = function () {
-        var data = JSON.parse(request.responseText);
-        console.log(data)
-        for (var i = 0; i < data["orders"].length; i++) {
-            $("#summaries").append(`<div class="roomSummary">${createRoomTable(data["orders"][i])}</div>`);
-            console.log(data["orders"][i])
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "json",
+        success: function (data) {
+            console.log(data)
+            $.each(data["orders"], function (i, order) {
+                $("#summaries").append(`<div class="roomSummary">${createRoomTable(order)}</div>`);
+                console.log(order)
+            })
         }
-    }
-    request.send()
+    });
 });
 
-
+//Create a summary table for the provided room data
 function createRoomTable(roomData) {
     var html = `<table>
     <thead>
@@ -92,6 +93,7 @@ function createRoomTable(roomData) {
     return html;
 }
 
+//count the number of rows in each category of room data
 function countRows(roomData, checkKeys) {
     count = 0;
     for (var key in checkKeys) {
@@ -102,6 +104,9 @@ function countRows(roomData, checkKeys) {
     return count;
 }
 
+//create the table row with appropriate table headers and table database
+//getKeys is the map of keys for the specific category
+//header is the label for the category
 function createRows(roomData, getKeys, header) {
     var isFirst = true;
     var html = ""
@@ -124,7 +129,7 @@ function createRows(roomData, getKeys, header) {
     return html;
 }
 
-
+//return number of hours with "hrs"
 function getHours(roomData, key) {
     var val = roomData[key];
     if (val != null && val != 0) {
@@ -134,6 +139,7 @@ function getHours(roomData, key) {
     return ""
 }
 
+//return number of feet with "ft"
 function getFeet(roomData, key) {
     var val = roomData[key];
     if (val != null && val != 0) {
@@ -141,6 +147,7 @@ function getFeet(roomData, key) {
     }
     return ""
 }
+//return number of coats with "coats"
 function getCoats(roomData, key) {
     var val = roomData[key];
     if (val != null && val != 0) {
@@ -150,6 +157,7 @@ function getCoats(roomData, key) {
     return ""
 }
 
+//return finish type
 function getFinish(roomData, key) {
     var val = roomData[key];
     if (val != null) {
@@ -158,6 +166,7 @@ function getFinish(roomData, key) {
     return ""
 }
 
+//return number of doors with "doors"
 function getDoors(roomData, key) {
     var val = roomData[key];
     if (val != null) {
@@ -166,6 +175,8 @@ function getDoors(roomData, key) {
     }
     return ""
 }
+
+//return number of windows with "windows"
 function getWindows(roomData, key) {
     var val = roomData[key];
     if (val != null) {
@@ -175,6 +186,7 @@ function getWindows(roomData, key) {
     return ""
 }
 
+//return number of linear feet with "linear ft"
 function getLinearFeet(roomData) {
     var width = roomData["width"];
     var length = roomData["length"];
@@ -184,6 +196,7 @@ function getLinearFeet(roomData) {
     return "x.x linear ft"
 }
 
+//return if window sills are with or without aprons
 function getAprons(roomData) {
     var val = roomData["aprons"];
     if (val != null) {
@@ -193,6 +206,7 @@ function getAprons(roomData) {
     return "";
 }
 
+//return formated string for wall height
 function getWallsHeight(roomData, key) {
     var val = roomData[key];
     if (val != null) {
@@ -203,15 +217,17 @@ function getWallsHeight(roomData, key) {
     return ""
 }
 
-
+//get labor cost for the row
 function laborCost() {
     return "$xxx.xx";
 }
 
+//get estimated time for the row
 function estimatedTime() {
     return "x.x hrs"
 }
 
+//get gallons for the row
 function gallons() {
     return "gals"
 }

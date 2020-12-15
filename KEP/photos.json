@@ -1,0 +1,16 @@
+{
+    "photos": [
+        {
+            "photo": "./src/example1.jpg",
+            "title": "Example Image 1"
+        },
+        {
+            "photo": "./src/example3.jpg",
+            "title": "Example Image 3"
+        },
+        {
+            "photo": "./src/example2.jpg",
+            "title": "Example Image 2"
+        }
+    ]
+}

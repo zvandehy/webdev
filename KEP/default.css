@@ -100,16 +100,16 @@ h1#kep {
     display:flex;
     flex-direction:row;
     justify-content:center;
-    height:40px;
+    height:60px;
 }
 
 #footer p {
     margin: auto;
-    font-size: x-small;
+    font-size: small;
     text-align: center;
     position: relative;
     padding: 3px 0px;
-    line-height: 10px;
+    line-height: 15px;
     margin:0px auto;
 }
 #footer p a {

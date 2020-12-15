@@ -31,18 +31,11 @@
     height:50%;
 }
 
-#pageContent > img {
-    float:left;
-    width:75px;
-    height:75px;
-    border-radius:10px;
-    border:1px solid black;
-}
-
 #photos img {
     flex: 0 0 auto;
     margin: 1%;
-    width: 23%;
     align-self: end;
     border:1px solid black;
+    width:150px;
+    height:75px;
 }
