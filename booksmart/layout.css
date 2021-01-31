@@ -1,0 +1,115 @@
+body {
+  background: #e4e4e4;
+  height: 100vh;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Cite: https://css-tricks.com/the-holy-grail-layout-with-css-grid/ */
+.page-wrap {
+  background: white;
+  height: 100vh;
+  box-shadow: 0 0 3px rgba(black, 0.33);
+
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr)  minmax(10px, 1fr) minmax(10px, 1fr) minmax(10px, 1fr);
+  grid-template-rows: min-content min-content auto min-content;
+  
+  /* gap: 1px; */
+}
+
+.page-wrap > * {
+    padding: 5px;
+    text-align: center;
+}
+
+/* Change format when on a device with a small display */
+@media (max-width: 700px) {
+  .page-wrap {
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+  }
+
+  .page-wrap > * {
+      grid-column: 1 / -1 !important;
+      grid-row: auto !important;
+  }
+}
+
+/* Logo Section */
+.page-header {
+  grid-column: 1 / 2;
+  grid-row: 1/1;
+  background-color: var(--logo);
+  height: var(--logo-height);
+  display: flex;
+}
+
+#logolink {
+  flex: initial;
+  background-color: inherit;
+  height: var(--logo-height);
+  margin:auto;
+}
+
+#logo {
+  width: 100%;
+  max-width: var(--logo-width);
+}
+
+
+/* Navigation to the right of logo */
+.page-nav {
+  grid-column: 2 / 5;
+  grid-row: 1/1;
+  flex: auto;
+  display:flex;
+  justify-content: space-around;
+  background: var(--logo);
+  height: var(--logo-height);
+}
+
+.page-nav div {
+  flex: initial;
+  margin:auto 0px;
+}
+
+.nav-btn-container {
+  display: inline-block;
+  margin: 10px !important;
+}
+
+.nav-btn {
+  margin: 0px 10px;
+}
+
+/* left main */
+/* .page-sidebar {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  background: #e1bee7;
+} */
+
+/* right main */
+.page-main {
+  grid-column: 1 / 5;
+  background: #dcedc8;
+}
+
+article {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+article p {
+  text-transform: none;
+  text-align: center;
+}
+
+/* footer */
+.page-footer {
+  grid-column: 1 / -1;
+  background: #ffecb3;
+}
+
+
