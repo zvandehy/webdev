@@ -1,0 +1,32 @@
+.search-container button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: var(--icon);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+  
+.search-container button:hover {
+    background: #ccc;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    padding-right: 0px;
+    width: min(500px, 75%);
+    font-size: 17px;
+    border: 1px solid var(--font);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search-container input[type=text]:focus {
+    border: 2px solid var(--font);
+    outline-width: 2px;
+}
+
+.search-container form {
+    padding:2px;
+}
