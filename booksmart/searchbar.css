@@ -9,7 +9,7 @@
 }
   
 .search-container button:hover {
-    background: #ccc;
+    background: var(--icon-dark);
 }
 
 .search-container input[type=text] {

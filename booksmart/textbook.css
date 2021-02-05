@@ -1,0 +1,33 @@
+:root {
+    --grid-view-image-size:250px;
+}
+
+#textbooks-view {
+    display: grid;
+    margin-top:20px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    gap:10px;
+}
+
+.textbook-listing img {
+   height:var(--grid-view-image-size);
+   width:var(--grid-view-image-size);
+}
+
+.textbook-listing {
+    background-color: rgba(170, 216, 170, 0.616);
+    border-radius: 10px;
+    width: calc(var(--grid-view-image-size) + 90px);
+    padding: 10px 5px;
+}
+
+.textbook-listing ul {
+    margin:auto 2px;
+    text-align:start;
+    position:relative;
+    left: 10px;
+    list-style-type: none;
+
+}
