@@ -1,3 +1,6 @@
+/* .search-container {
+    height:64px;
+} */
 .search-container button {
     padding: 6px 10px;
     margin-top: 8px;
@@ -12,7 +15,7 @@
     background: var(--icon-dark);
 }
 
-.search-container input[type=text] {
+.search-container input[type=search] {
     padding: 6px;
     padding-right: 0px;
     width: min(500px, 75%);
@@ -20,6 +23,7 @@
     border: 1px solid var(--font);
     border-radius: 10px;
     box-sizing: border-box;
+    height:100%;
 }
 
 .search-container input[type=text]:focus {

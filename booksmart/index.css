@@ -1,3 +1,11 @@
+#description {
+    background-color: rgba(170, 216, 170, 0.616);
+    width:40%;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
 .left-main {
     margin:auto;
     text-align: start;
@@ -13,13 +21,7 @@
     overflow:hidden;
 }
   
-#description {
-    background-color: rgba(170, 216, 170, 0.616);
-    width:40%;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 50px;
-}
+
   
 .page-main img {
     position: absolute;

@@ -1,0 +1,80 @@
+:root {
+    --grid-view-image-size:250px;
+}
+
+#textbooks-view {
+    display: grid;
+    margin-top:20px;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--grid-view-image-size) + 45px), 1fr));
+    grid-template-rows: auto;
+    justify-content: center;
+    gap:36px;
+    padding-left:72px;
+    padding-right:72px;
+    margin:0px, auto;
+}
+
+.textbook-listing img {
+   height:var(--grid-view-image-size);
+   width:var(--grid-view-image-size);
+}
+
+.textbook-listing {
+    background-color: rgba(170, 216, 170, 0.616);
+    border-radius: 10px;
+    width: calc(var(--grid-view-image-size) + 45px);
+    padding: 10px 5px;
+    list-style:none;
+    margin:auto;
+}
+
+.textbook-listing a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.textbook-listing ul {
+    margin:auto 2px;
+    text-align:start;
+    position:relative;
+    list-style-type: none;
+    padding-left:0px;
+}
+
+.textbook-info {
+    display:flex;
+    width: 100%;
+}
+
+.label {
+    font-weight: bold;
+    text-align: end;
+    margin-right:5px;
+    width: 40%;
+}
+
+.value {
+    text-align: start;
+    width:60%;
+}
+
+#categories {
+    margin-bottom:15px;
+}
+
+#categories ul {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+#categories ul li {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#categories ul li a {
+    font-weight: 300;
+    /* color: rgb(131, 57, 250); */
+}
