@@ -41,23 +41,6 @@
     padding-left:0px;
 }
 
-.textbook-info {
-    display:flex;
-    width: 100%;
-}
-
-.label {
-    font-weight: bold;
-    text-align: end;
-    margin-right:5px;
-    width: 40%;
-}
-
-.value {
-    text-align: start;
-    width:60%;
-}
-
 #categories {
     margin-bottom:15px;
 }

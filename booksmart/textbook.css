@@ -1,14 +1,94 @@
-img {
-    height: 100%;
+.img-wrap {
+    margin:auto;
+}
+
+.page-main img {
+    height: auto;
     width: 50%;
     display: inline;
+    margin: auto;
+    padding:5px;
+    box-sizing: border-box;
 }
 
-.wrap {
-    display:flex;
-    justify-content: center;
+.page-main {
+    display:grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 70% 30%;
+    gap: 15px;
+    margin-right:5px;
 }
 
+#price {
+    font-size:30px;
+    font-weight: bold;
+    color:var(--font);
+    text-align: start;
+    margin-left:40px;
+    background-color: var(--icon);
+    display: inline-block;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.extra-images-wrap {
+    margin: auto 15%;
+}
+.extra-images-wrap img {
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+}
+@media (max-width: 700px) {
+    .page-main {
+        grid-template-columns: 100%;
+        grid-template-rows: min-content min-content min-content min-content;
+    }
+}
 .info {
+    text-align: start;
+}
+
+.info h1 {
+    text-align:center;
+}
+
+.info h2 {
+    margin-left: 40px;
+}
+
+.info ul {
+    list-style: none;
+    font-size: 20px;
+}
+
+.info li {
+    margin:3px 0;
+}
+
+.info .textbook-info .label{
+    text-align: center;
+}
+
+.sell-wrap {
+    margin:auto;
+}
+.sell-wrap button {
+    height:55px;
+    width: 140px;
+    border-radius: 3px;
+    border:none;
+    background-color: rgb(61, 61, 238);
+    color:white;
+    cursor:pointer;
+}
+.sell-wrap * {
     display: inline;
+}
+
+#confirmed-exchanges {
+    border-radius: 3px;
+    padding:2px 4px;
+    color:var(--font);
+    border:1px solid rgb(168, 168, 168)
 }
