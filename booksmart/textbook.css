@@ -16,7 +16,7 @@
     grid-template-columns: 60% 40%;
     grid-template-rows: 70% 30%;
     gap: 15px;
-    margin-right:5px;
+    margin: auto;
 }
 
 #price {
@@ -39,6 +39,11 @@
     height: auto;
     box-sizing: border-box;
 }
+
+.extra-images-wrap a.focused img {
+    border: 1px solid black;
+}
+
 @media (max-width: 700px) {
     .page-main {
         grid-template-columns: 100%;
@@ -81,6 +86,7 @@
     background-color: rgb(61, 61, 238);
     color:white;
     cursor:pointer;
+    margin-top:5px;
 }
 .sell-wrap * {
     display: inline;

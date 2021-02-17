@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="searchbar.css">
     <link rel="stylesheet" href="textbook.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="textbook.js"></script>
     <title>booksmart - Get books smarter!</title>
 </head>
 
@@ -28,7 +29,7 @@
     </nav>
     <main class="page-main">
       <div class="img-wrap">
-        <img src="src/textbook.jpg" alt="textbook">
+        <img id="image" src="src/textbook.jpg" alt="textbook">
       </div>
       <div class="info">
           <h1 id="textbook-name">Designing Interfaces - Patterns for Effective Interaction Design</h1>
@@ -47,9 +48,9 @@
         </ul>
       </div>
       <div class="extra-images-wrap">
-        <img src="src/textbook.jpg" alt="textbook">
-        <img src="src/textbook.jpg" alt="textbook">
-        <img src="src/textbook.jpg" alt="textbook">
+        <a href="src/textbook.jpg" class="focused" title="Textbook 1"><img src="src/textbook.jpg" alt="textbook"></a>
+        <a href="src/textbook.jpg" title="Textbook 2"><img src="src/textbook.jpg" alt="textbook"></a>
+        <a href="src/textbook.jpg" title="Textbook 3"><img src="src/textbook.jpg" alt="textbook"></a>
       </div>
       <div class="sell-wrap">
         <p>This seller has had <span id="confirmed-exchanges">1</span> confirmed exchange(s).</p>
