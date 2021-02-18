@@ -1,0 +1,185 @@
+div.form-group {
+    display: grid;
+    grid-template-columns: 145px auto;
+}
+
+div.form-group input, div.form-group select {
+    width: 80%;
+}
+
+.form-group input#title {
+    width: 90%;
+    font-weight: bold;
+    font-size: 20px;
+    margin:2px;
+}
+
+#price { 
+    background-color: var(--icon);
+    display: inline-block;
+    padding:5px;
+    margin:2px;
+    border-radius: 5px;
+    width:80%;
+}
+
+.form-group #price #askingPrice {
+    border:1px solid var(--font);
+    width:99%;
+    font-size:30px;
+    font-weight: bold;
+    color:var(--font);
+    text-align: start;
+    background-color: inherit;
+}
+
+input, select {
+    border: 1px solid black;
+    height: 25px;
+}
+
+label {
+    margin: auto 0px;
+    margin-right: 5px;
+    display:inline-block;
+    text-align: end;
+}
+
+label > span, h2 > span {
+    color:red;
+}
+
+.img-wrap {
+    margin:auto;
+}
+
+.page-main img {
+    height: auto;
+    width: 90%;
+    display: inline;
+    margin: auto;
+    padding:5px;
+    box-sizing: border-box;
+}
+
+.page-main {
+    display:grid;
+    grid-template-columns: 50% auto;
+    /* grid-template-rows: 70% 30%; */
+    gap: 15px;
+    margin: auto;
+}
+
+main {
+    grid-column: 1/5;
+    width: 100%;
+}
+
+#extra-images-wrap {
+    margin: auto 15%;
+}
+#extra-images-wrap img {
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#extra-images-wrap a.focused img {
+    border: 1px solid black;
+}
+
+@media (max-width: 700px) {
+    .page-main {
+        grid-template-columns: 100%;
+        grid-template-rows: min-content min-content min-content min-content;
+    }
+}
+.info {
+    text-align: start;
+}
+
+.info h1 {
+    text-align:center;
+}
+
+.info h2 {
+    margin-left: 40px;
+}
+
+.info ul {
+    list-style: none;
+}
+
+.info li {
+    margin:3px 0;
+}
+
+.info .textbook-info .label{
+    text-align: center;
+}
+
+#submit {
+    margin:auto;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+}
+#submit button {
+    height:55px;
+    width: 140px;
+    border-radius: 3px;
+    border:none;
+    background-color: rgb(61, 61, 238);
+    color:white;
+    cursor:pointer;
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#submit button:hover {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.cr-slider {
+    border:none;
+}
+
+button.upload-result {
+    height:35px;
+    border-radius: 3px;
+    background-color: var(--icon);
+    border: 1px solid black;
+    cursor:pointer;
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+input[type="file"] {
+    display:none;
+}
+
+#uploadLabel {
+    padding:3px;
+    border-radius: 3px;
+    background-color: rgb(61, 61, 238);
+    color:white;
+    border: 1px solid black;
+    cursor:pointer;
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+button.remove-photo {
+    height:35px;
+    border-radius: 3px;
+    background-color: rgb(253, 65, 65);
+    border: 1px solid black;
+    cursor:pointer;
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}

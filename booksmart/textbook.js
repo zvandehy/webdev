@@ -1,6 +1,15 @@
 $(document).ready(function () {
+    readyImages();
+    console.log("aasda")
+    // move the focus to the first link
+    $("a")[0].focus();
+
+}); // end ready
+
+var readyImages = function () {
     $images = []
-    $(".extra-images-wrap a").each(function () {
+    $("#extra-images-wrap a").each(function () {
+        console.log("hello 2")
         // preload the image for each link
         var image = new Image()
         image.src = $(this).attr("href")
@@ -13,7 +22,7 @@ $(document).ready(function () {
                 $("#image").attr("src", imageUrl);
                 $("#image").fadeIn("fast");
             });
-            $(".extra-images-wrap a").each(function () {
+            $("#extra-images-wrap a").each(function () {
                 $(this).removeClass("focused");
             });
             $(this).addClass("focused");
@@ -21,8 +30,5 @@ $(document).ready(function () {
             // cancel the default action of each link
             evt.preventDefault();
         })
-    })
-    // move the focus to the first link
-    $("a")[0].focus()
-
-}); // end ready
+    });
+}
