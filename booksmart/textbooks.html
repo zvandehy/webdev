@@ -18,8 +18,8 @@
     </header>
     <nav class="page-nav">
       <div id="navigation">
-        <div class="nav-btn-container"><a class="nav-btn"href="./textbooks.html" class="btn">View All Textbooks</a></div>
-        <div class="nav-btn-container"><a class="nav-btn"href="./newTextbook.html" class="btn">Sell Your textbook</a></div>
+        <div class="nav-btn-container"><a class="nav-btn btn" href="./textbooks.html">View All Textbooks</a></div>
+        <div class="nav-btn-container"><a class="nav-btn btn" href="./newTextbook.html">Sell Your textbook</a></div>
       </div>
       <div id="logins">
         <div class="nav-btn-container"><a class="nav-btn" id="login" href="#">Log in</a></div>
@@ -30,7 +30,7 @@
         <h1>Showing All Textbooks</h1>
         <!-- Cite (searchbar): https://www.w3schools.com/howto/howto_css_searchbar.asp -->
         <div class="search-container">
-          <form action="/action_page.php">
+          <form action="./textbooks.html">
             <input type="search" placeholder="Enter the ISBN, Title, Author, or Class Code" name="q">
             <button type="submit">Search</button>
           </form>
@@ -51,7 +51,7 @@
           </ul>
         </div>
         <h2>Architecture</h2>
-        <ol id="textbooks-view">
+        <ol class="textbooks-view">
           <li class="textbook-listing">
             <a href="textbook.html">
             <img src="src/textbook.jpg" alt="textbook">
@@ -145,7 +145,7 @@
           </li>
         </ol>
         <h2>Computer Science</h2>
-        <ol id="textbooks-view">
+        <ol class="textbooks-view">
           <li class="textbook-listing">
             <a href="textbook.html">
             <img src="src/textbook.jpg" alt="textbook">
