@@ -1,8 +1,7 @@
 $(document).ready(function () {
     readyImages();
-    console.log("aasda")
     // move the focus to the first link
-    $("a")[0].focus();
+    $("#extra-images-wrap a")[0].focus();
 
 }); // end ready
 

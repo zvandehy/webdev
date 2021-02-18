@@ -96,6 +96,7 @@ main {
 }
 .info {
     text-align: start;
+    margin-right:0px;
 }
 
 .info h1 {

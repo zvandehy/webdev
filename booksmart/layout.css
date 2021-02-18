@@ -17,7 +17,7 @@
 html, body {
   font-family:istok_webfont, sans-serif;
   width: 100%;
-  overflow-x:clip;
+  overflow-x:hidden;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 .page-wrap {
   background: white;
   height: 100vh;
-  box-shadow: 0 0 3px rgba(black, 0.33);
+  box-shadow: 0 0 3px rgba(#000, 0.33);
   display: grid;
   grid-template-columns: max-content  minmax(10px, 1fr) minmax(10px, 1fr) minmax(10px, 1fr);
   grid-template-rows: min-content auto min-content;
@@ -63,7 +63,7 @@ body {
   grid-column: 1 / 2;
   grid-row: 1/1;
   background-color: var(--logo);
-  height: max(var(--logo-height),75px);
+  height: 75px;
   display: flex;
 }
 
@@ -90,7 +90,7 @@ body {
   display:flex;
   justify-content: space-around;
   background: var(--logo);
-  height: max(var(--logo-height),75px);
+  height: 75px;
 }
 
 .page-nav div {
