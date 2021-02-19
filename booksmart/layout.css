@@ -4,14 +4,16 @@
 }
 /* {"bg":"#FDEDDF","icon-gradient-0":"#E63500","icon-gradient-1":"#FFC316","font":"#361A02","slogan":"#4a2e16"} */
 :root {
-  --bg: #FDEDDF;
-  --logo: #FDEDDF;
+  --bg: #495867;
+  --logo: #495867;
   --logo-height: 51px;
   --logo-width: 302.25px;
   --icon: #FFC316;
   --icon-dark: #ffaf04;
-  --font: #361A02;
-
+  --font: #e8e9eb;
+  --font-dark: #313638;
+  --accent:#EF6461;
+  --accent-dark: #b43836;
 }
 
 html, body {
@@ -24,6 +26,7 @@ body {
   background: var(--bg);
   height: 100vh;
   margin: 0;
+  color: var(--font-dark);
 }
 
 /* Cite: https://css-tricks.com/the-holy-grail-layout-with-css-grid/ */
@@ -106,14 +109,12 @@ body {
 .nav-btn {
   margin: 0px 10px;
   color: var(--font);
-  border:none;
   border-radius: 200px;
   font-weight: bold;
   padding: 6px 10px;
   padding-top: 7px;
   text-decoration:none;
   font-size: 20px;
-  background-color:var(--icon);
 }
 
 .nav-btn:hover {
@@ -126,17 +127,18 @@ body {
 }
 
 #navigation div .nav-btn:hover {
-  background-color: var(--icon-dark);
+  color: var(--icon);
 }
 
-#login {
+#login, #signup {
   background-color:inherit;
   border: 2px solid var(--icon);
 }
 
-#login:hover {
+#login:hover, #signup:hover {
   background-color:var(--icon-dark);
   border-color:var(--icon-dark);
+  color:var(--bg);
 }
 
 .page-main {

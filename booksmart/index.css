@@ -1,5 +1,6 @@
 #description {
-    background-color: rgba(170, 216, 170, 0.616);
+    background-color: var(--accent);
+    color:var(--font-dark);
     width:40%;
     padding: 15px;
     border-radius: 10px;
@@ -24,7 +25,6 @@
 .page-main img {
     position: absolute;
     top: 85px;
-    left: 45%;
     height: min-content;
     max-height: 80%;
     z-index:0;

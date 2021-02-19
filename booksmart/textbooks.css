@@ -21,8 +21,8 @@
 }
 
 .textbook-listing {
-    background-color: rgba(170, 216, 170, 0.616);
-    border-radius: 10px;
+    border:3px solid var(--bg);
+    /* border-radius: 10px; */
     width: calc(var(--image-size-with-padding));
     padding: 10px 5px;
     list-style:none;

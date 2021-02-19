@@ -15,7 +15,7 @@ div.form-group input, div.form-group select {
 }
 
 #price { 
-    background-color: var(--icon);
+    /* background-color: var(--icon); */
     display: inline-block;
     padding:5px;
     margin:2px;
@@ -28,7 +28,7 @@ div.form-group input, div.form-group select {
     width:99%;
     font-size:30px;
     font-weight: bold;
-    color:var(--font);
+    color: rgb(245, 69, 69);
     text-align: start;
     background-color: inherit;
 }
@@ -177,6 +177,7 @@ button.remove-photo {
     height:35px;
     border-radius: 3px;
     background-color: rgb(253, 65, 65);
+    color:white;
     border: 1px solid black;
     cursor:pointer;
     margin-top:5px;

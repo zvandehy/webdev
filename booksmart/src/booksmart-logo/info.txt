@@ -10,5 +10,9 @@ font author site:
 icon designer: Geoff R
 icon designer link: /Foomandoonian
         
-{"bg":"#156EAC","icon":"#F6575E","font":"#ffffff","slogan":"#ffffff"}
+
+fontColor: {"gradient-0":"#e73901","gradient-1":"#FFC316"}
+bgColor: {"hex":"#495867"}
+iconColor: {"gradient-0":"#e73901","gradient-1":"#FFC316"}
+
       

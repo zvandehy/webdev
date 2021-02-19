@@ -22,10 +22,10 @@
 #price {
     font-size:30px;
     font-weight: bold;
-    color:var(--font);
+    color: rgb(245, 69, 69);
     text-align: start;
     margin-left:40px;
-    background-color: var(--icon);
+    /* background-color: var(--accent); */
     display: inline-block;
     padding:5px;
     border-radius: 5px;
@@ -98,10 +98,6 @@
     display:block;
 }
 
-.update-delete a {
-    text-decoration: none;
-}
-
 .update-delete button {
     height:30px;
     width: 90px;
@@ -125,6 +121,6 @@
 #confirmed-exchanges {
     border-radius: 3px;
     padding:2px 4px;
-    color:var(--font);
+    color:var(--font-dark);
     border:1px solid rgb(168, 168, 168)
 }

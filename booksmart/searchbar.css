@@ -9,6 +9,7 @@
     font-size: 17px;
     border: none;
     cursor: pointer;
+    border-radius: 3px;
 }
   
 .search-container button:hover {
