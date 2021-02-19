@@ -50,14 +50,30 @@ body {
 @media (max-width: 700px) {
   .page-wrap {
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content min-content min-content;
+  grid-template-rows: repeat(min-content);
   }
   .page-main img {
-    top:170px !important;
+    display:none;
+  }
+  .page-footer {
+    z-index: 1;
   }
   .page-wrap > * {
       grid-column: 1 / -1 !important;
       grid-row: auto !important;
+  }
+  html {
+    overflow: hidden;
+  }
+
+  #description {
+    width:80% !important;
+  }
+
+  .left-main {
+    background-image: url("./src/books-vector.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
   }
 }
 

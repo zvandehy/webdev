@@ -53,6 +53,10 @@ label > span, h2 > span {
     margin:auto;
 }
 
+main {
+    padding:0px !important;
+}
+
 .page-main img {
     height: auto;
     width: 90%;
