@@ -11,8 +11,8 @@ router.get("/new", controller.new);
 // // POST /stories
 // router.post("/", controller.create);
 
-// // GET /stories/:id
-// router.get("/:id", controller.show);
+// GET /stories/:id
+router.get("/:id", controller.show);
 
 // // GET /stories/:id/edit
 // router.get("/:id/edit", controller.edit);

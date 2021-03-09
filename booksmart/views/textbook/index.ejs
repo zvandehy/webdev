@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="/css/textbooks.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+
+<body>
+<div class="page-wrap">
+    <%- include('../partials/header.ejs') %>
+    <main class="page-main">
+        <h1>Showing All Textbooks</h1>
+        <!-- Cite (searchbar): https://www.w3schools.com/howto/howto_css_searchbar.asp -->
+        <div class="search-container">
+          <form action="textbooks.html">
+            <input type="search" placeholder="Enter the ISBN, Title, Author, or Class Code" name="q">
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div id="categories">
+          <ul>
+            <li>Subject Areas:</li>
+            <!-- TODO: Make links navigate to that section -->
+            <li><a href="#">Architecture</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Computer Science</a></li>
+            <li><a href="#">Creative Arts</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">Health & Medicine</a></li>
+            <li><a href="#">Humanities</a></li>
+            <li><a href="#">Pure Sciences</a></li>
+            <li><a href="#">Social Studies</a></li>
+          </ul>
+        </div>
+        <h2>Computer Science</h2>
+        <ol class="textbooks-view">
+            <% if (textbooks.length != 0) { textbooks.forEach(textbook => { %>
+                <li class="textbook-listing">
+                    <a href="textbooks/<%= textbook.id %>">
+                    <img src="/src/textbooks/<%= textbook.images[0]%>"alt="textbook">
+                    <ul>
+                    <li class="textbook-info"><span class="label">Title:</span> <span class="value"><%= textbook.title %></span></li>
+                    <li class="textbook-info"><span class="label">ISBN:</span> <span class="value"><%= textbook.isbn %></span></li>
+                    <li class="textbook-info"><span class="label">Author:</span> <span class="value"><%= textbook.author %></span></li>
+                    <li class="textbook-info"><span class="label">Class Code:</span> <span class="value"><%= textbook.classcode %></span></li>
+                    <li class="textbook-info"><span class="label">Class Name:</span> <span class="value"><%= textbook.classname %></span></li>
+                    <li class="textbook-info"><span class="label">Asking Price:</span> <span class="value">$<%= textbook.price %></span></li>
+                    </ul>
+                    </a>
+                </li>
+            <% });} else { %>
+                <p> There are no textbooks to display</p>
+            <% } %>
+        </ol>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

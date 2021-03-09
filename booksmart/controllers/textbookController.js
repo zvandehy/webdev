@@ -1,11 +1,10 @@
-// const model = require('../models/textbook.js');
+const model = require('../models/textbook.js');
 
 
 // GET /textbooks: send all stories to the user
 exports.index = (req, res) => {
-    // let stories = model.find();
-    // res.render('./story/index', { stories }) //"/views" is implicit
-    res.send("textbooks");
+    let textbooks = model.find();
+    res.render('./textbook/index', { textbooks }) //"/views" is implicit
 };
 
 // // GET /stories/new: send the form to create a new story
@@ -23,17 +22,17 @@ exports.new = (req, res) => {
 //     res.redirect('/stories');
 // };
 
-// // GET /stories/:id
-// exports.show = (req, res, next) => {
-//     let story = model.findById(req.params.id);
-//     if (story) {
-//         res.render("./story/show", { story });
-//     } else {
-//         let err = new Error("Cannot find a story with id " + req.params.id);
-//         err.status = 404;
-//         next(err);
-//     }
-// };
+// GET /stories/:id
+exports.show = (req, res, next) => {
+    let textbook = model.findById(req.params.id);
+    if (textbook) {
+        res.render("./textbook/show", { textbook: textbook });
+    } else {
+        let err = new Error("Cannot find a textbook with id " + req.params.id);
+        err.status = 404;
+        next(err);
+    }
+};
 
 // // GET /stories/:id/edit
 // exports.edit = (req, res, next) => {

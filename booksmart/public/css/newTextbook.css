@@ -1,6 +1,6 @@
 div.form-group {
     display: grid;
-    grid-template-columns: 145px auto;
+    grid-template-columns: 170px auto;
 }
 
 div.form-group input, div.form-group select {

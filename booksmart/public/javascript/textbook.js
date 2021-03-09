@@ -1,14 +1,16 @@
 $(document).ready(function () {
     readyImages();
     // move the focus to the first link
-    $("#extra-images-wrap a")[0].focus();
+    let images = $("#extra-images-wrap a")
+    if (images.length > 0) {
+        images[0].focus();
+    }
 
 }); // end ready
 
 var readyImages = function () {
     $images = []
     $("#extra-images-wrap a").each(function () {
-        console.log("hello 2")
         // preload the image for each link
         var image = new Image()
         image.src = $(this).attr("href")
