@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-// const storyRoutes = require('./routes/storyRoutes.js');
+const textbookRoutes = require('./routes/textbookRoutes.js');
 const methodOverride = require("method-override");
 
 //create application
@@ -18,7 +18,7 @@ app.use(morgan("tiny")); //log requests and responses in terminal
 app.use(methodOverride('_method')); //replace the request method with the value in the query field "_method"
 
 //set up routes
-// app.use('/stories', storyRoutes); //handle all requests with "/stories" prefix with router module
+app.use('/textbooks', textbookRoutes); //handle all requests with "/stories" prefix with router module
 app.get("/", (req, res) => {
     res.render('index');
 });

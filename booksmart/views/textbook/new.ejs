@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="/css/textbook.css"> 
+    <link rel="stylesheet" href="/css/newTextbook.css">
+    <link rel="stylesheet" href="/croppie/croppie.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/croppie/croppie.min.js"></script>
+    <script src="/javascript/newTextbook.js"></script>
+    <script src="/javascript/textbook.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+
+<body>
+<div class="page-wrap">
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <h1>Sell Your Textbook</h1>
+        <form class="page-main" action="textbooks.html" method="GET">
+            <div class="img-wrap">
+                <h2>Cover Photo <span>*</span></h2>
+                <div id="upload-demo">
+                </div>
+                <div class="actions">
+                    <label for="upload" id="uploadLabel">Select a Cover Photo</label>
+                    <input type="file" id="upload"/>
+                    <button class="upload-result" type="button">
+                        Crop & Save
+                    </button>
+                    <p>Once you upload your cover photo, you may choose other photos to include.</p>
+                    <button class="remove-photo" type="button">Remove Selected Photo</button>
+                </div>
+            </div>
+            <div class="info">
+                <div class="form-group">
+                    <label for="title">Textbook Title <span>*</span></label>
+                    <input id="title" name="title" type="text" placeholder=" Examining Probability and Statistics" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="askingPrice">Asking Price ($) <span>*</span></label>
+                    <div id="price"><input id="askingPrice" name="askingPrice" type="text" placeholder=" 20.00" required></div>
+                </div>
+
+                
+                <h2>Textbook Info</h2>
+                <ul>
+                    <!-- author -->
+                    <li><div class="form-group">
+                        <label for="author">Textbook Author <span>*</span></label>
+                        <input id="author" name="author" type="text" placeholder=" Oliver Twist" required>
+                    </div></li>
+                    <!-- ISBN -->
+                    <li><div class="form-group">
+                        <label for="isbn">Textbook ISBN <span>*</span></label>
+                        <input id="isbn" name="isbn" type="text" placeholder=" 978-3-16-148410-0" required>
+                    </div></li>
+                    <li><div class="form-group">
+                        <!-- quality -->
+                        <label for="quality">Textbook Quality <span>*</span></label>
+                        <select id="quality" name="quality" required>
+                            <option value="" disabled selected>Select the most accurate quality</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div></li>
+                </ul>
+                <h2>Class Info</h2>
+                <ul>
+                    <!-- subject -->
+                    <li><div class="form-group">
+                        <label for="subject">Subject Area <span>*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select the most appropriate subject</option>
+                            <option value="Architecture">Architecture</option>
+                            <option value="Business">Business</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Creative Arts">Creative Arts</option>
+                            <option value="Education">Education</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Health & Medicine">Health & Medicine</option>
+                            <option value="Humanities">Humanities</option>
+                            <option value="Pure Sciences">Pure Sciences</option>
+                            <option value="Social Studies">Social Studies</option>
+                        </select>
+                    </div></li>
+                    <!-- class code -->
+                    <li><div class="form-group">
+                        <label for="classCode">Class Code<span></span></label>
+                        <input id="classCode" name="classCode" type="text" placeholder = " STAT 1101">
+                    </div></li>
+                    <!-- class name -->
+                    <li><div class="form-group">
+                        <label for="className">Class Name <span></span></label>
+                        <input id="className" name="className" type="text" placeholder=" Intro to Probability and Statistics"> 
+                    </div></li>
+                    <!-- professor -->
+                    <li><div class="form-group">
+                        <label for="professor">Professor <span></span></label>
+                        <input id="professor" name="professor" type="text" placeholder=" Dr. Gerwin">
+                    </div></li>
+                </ul>
+                <div id="submit">
+                    <button type="submit">Ready to Sell!</button>
+                </div>
+            </div>
+            <div id="extra-images-wrap"></div>
+            <div></div>
+        </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </div>
+</body>
+</html>

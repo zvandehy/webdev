@@ -8,7 +8,7 @@ const methodOverride = require("method-override");
 const app = express();
 
 //configure app
-let port = 3000;
+let port = 3030;
 let host = 'localhost';
 app.set('view engine', 'ejs');
 

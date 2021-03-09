@@ -1,17 +1,17 @@
 // const model = require('../models/textbook.js');
 
 
-// GET /stories: send all stories to the user
+// GET /textbooks: send all stories to the user
 exports.index = (req, res) => {
     // let stories = model.find();
     // res.render('./story/index', { stories }) //"/views" is implicit
-    res.sendFile("../views/index.html");
+    res.send("textbooks");
 };
 
 // // GET /stories/new: send the form to create a new story
-// exports.new = (req, res) => {
-//     res.render('./story/new');
-// };
+exports.new = (req, res) => {
+    res.render('./textbook/new');
+};
 
 // // POST /stories
 // exports.create = (req, res) => {
