@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+
+<body>
+<div class="page-wrap">
+    <%- include("./partials/header.ejs") %>
+    <main class="page-main">
+      <div class="left-main">
+        <div id="description">
+          <h2>What is booksmart?</h2>
+          <p>Booksmart is an easy way to buy books from students at your university. Primarily, purchases
+              are for classes at UNC Charlotte. Buying and reselling books is one of the easiest ways
+              to save money on textbooks. </p>
+            <h2>How do you use it?</h2>
+            <p>Simply search for a textbook that you need and see if a previous student is using their 
+                used copy.  Once you find the book you need, you can contact the seller to inform them of your
+                interest. Privately set up a place to meet to make the exchange. It is highly recommended that you
+                meet in a public location to make the exchange, much like making purchases on Craigslist. Atkins or
+                the Student Union at UNCC would make a great places to meet up.</p>
+            
+            <p>If you have any questions, comments, or concerns, please <a href="/contact">reach out</a>.</p>
+        </div>
+      </div>
+      <div class="right-main">
+        <img src="src/books-vector.jpg" alt="textbook vector">
+      </div>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </div>
+</body>
+</html>

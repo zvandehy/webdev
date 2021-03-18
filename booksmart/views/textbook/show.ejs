@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/searchbar.css">
     <link rel="stylesheet" href="/css/textbook.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/javascript/textbook.js"></script>
+    <script src="/javascript/showTextbook.js"></script>
     <title>booksmart - Get books smarter!</title>
 </head>
 
@@ -17,7 +17,11 @@
     <%- include('../partials/header.ejs') %>
     <main class="page-main">
       <div class="img-wrap">
-        <img id="image" src="/src/textbooks/<%=textbook.images[0]%>" alt="textbook">
+        <% if (textbook.images.length != 0) { %>
+          <img id="image" src="<%= textbook.images[0]%>" alt="textbook">
+        <% } else { %>
+          <img id="image" src="/src/textbooks/no-image.jpg" alt="textbook">
+        <% } %>
       </div>
       <div class="info">
           <h1 id="textbook-name"><%= textbook.title %></h1>
@@ -30,6 +34,7 @@
           </ul>
           <h2>Class Info</h2>
           <ul>
+            <li class="textbook-info"><span class="label">Subject:</span> <span class="value"><%= textbook.subject %></span></li>
             <li class="textbook-info"><span class="label">Class Code:</span> <span class="value"><%= textbook.classcode %></span></li>
             <li class="textbook-info"><span class="label">Class Name:</span> <span class="value"><%= textbook.classname %></span></li>
             <li class="textbook-info"><span class="label">Last Prof:</span> <span class="value"><%= textbook.professor %></span></li>
@@ -37,7 +42,7 @@
       </div>
       <div id="extra-images-wrap">
         <% for (i=0; i < textbook.images.length; i++) { %>
-                <a href="/src/textbooks/<%=textbook.images[i]%>" <% if (i==0) { %> class="focused" <% } %>><img src="/src/textbooks/<%=textbook.images[i]%>" alt="textbook photo"></a>
+                <a href="<%=textbook.images[i]%>" <% if (i==0) { %> class="focused" <% } %>><img src="<%=textbook.images[i]%>" alt="textbook photo"></a>
         <% } %>
         </div>
       <div class="sell-wrap">
@@ -46,9 +51,9 @@
           <button type="button">Contact Seller</button>
         </div>
         <div class="update-delete">
-          <form action="textbooks.html">
-            <button id="update" type="submit">Update</button>
-            <button id="delete" type="submit">Delete</button>
+          <form>
+            <button id="update" type="submit" formmethod="GET" formaction = "/textbooks/<%=textbook.id%>/edit">Edit</button>
+            <button id="delete" type="submit" formmethod="POST" formaction = "/textbooks/<%=textbook.id%>?_method=DELETE">Delete</button>
           </form>
         </div>
       </div>

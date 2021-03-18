@@ -21,7 +21,7 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <h1>Sell Your Textbook</h1>
-        <form id="textbook-form" class="page-main" action="/textbooks" method="POST">
+        <form class="page-main" action="/textbooks/<%= textbook.id %>?_method=PUT" onsubmit="return validate()" method="POST">
             <div class="img-wrap">
                 <!-- TODO: URL -->
                 <!-- TODO: Upload to server -->
@@ -42,12 +42,12 @@
             <div class="info">
                 <div class="form-group">
                     <label for="title">Textbook Title <span>*</span></label>
-                    <input id="title" name="title" type="text" placeholder=" Examining Probability and Statistics" required>
+                    <input id="title" name="title" type="text" value="<%=textbook.title%>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="price">Asking Price ($) <span>*</span></label>
-                    <div class="price"><input id="price" name="price" type="text" placeholder=" 20.00" required></div>
+                    <div class="price"><input id="price" name="price" type="text" value="<%=textbook.price%>" required></div>
                 </div>
 
                 
@@ -56,29 +56,28 @@
                     <!-- author -->
                     <li><div class="form-group">
                         <label for="author">Textbook Author <span>*</span></label>
-                        <input id="author" name="author" type="text" placeholder=" Oliver Twist" required>
+                        <input id="author" name="author" type="text" value="<%=textbook.author%>" required>
                     </div></li>
                     <!-- ISBN -->
                     <li><div class="form-group">
                         <label for="isbn">Textbook ISBN <span>*</span></label>
-                        <input id="isbn" name="isbn" type="text" placeholder=" 978-3-16-148410-0" required>
+                        <input id="isbn" name="isbn" type="text" value="<%=textbook.isbn%>" required>
                     </div></li>
                     <li><div class="form-group">
                         <!-- quality -->
                         <label for="quality">Textbook Quality <span>*</span></label>
                         <select id="quality" name="quality" required>
-                            <option value="" disabled selected>Select the most accurate quality</option>
-                            <option value="Like New">Like New</option>
-                            <option value="Very Good">Very Good</option>
-                            <option value="Good">Good</option>
-                            <option value="Fair">Fair</option>
-                            <option value="Poor">Poor</option>
+                            <option value="" disabled>Select the most accurate quality</option>
+                            <%
+                            var qualities = ["Like New", "Very Good", "Good", "Fair", "Poor"];
+                            qualities.forEach(function(q) { %>
+                                <option value="<%=q%>"<% if (textbook.quality == q) { %> selected <%}%> ><%=q%></option>
+                            <% }); %>
                         </select>
                     </div></li>
-                    <!-- image URL (until I get the cropper to work) -->
                     <li><div class="form-group">
                         <label for="imageurl">Image Url<span>*</span></label>
-                        <input id="imageurl" name="imageurl" type="text" placeholder=" image.png" required>
+                        <input id="imageurl" name="imageurl" type="text" value="<%=textbook.images[0]%>" required>
                     </div></li>
                 </ul>
                 <h2>Class Info</h2>
@@ -87,41 +86,40 @@
                     <li><div class="form-group">
                         <label for="subject">Subject Area <span>*</span></label>
                         <select id="subject" name="subject" required>
-                            <option value="" disabled selected>Select the most appropriate subject</option>
-                            <option value="Architecture">Architecture</option>
-                            <option value="Business">Business</option>
-                            <option value="Computer Science">Computer Science</option>
-                            <option value="Creative Arts">Creative Arts</option>
-                            <option value="Education">Education</option>
-                            <option value="Engineering">Engineering</option>
-                            <option value="Health & Medicine">Health & Medicine</option>
-                            <option value="Humanities">Humanities</option>
-                            <option value="Pure Sciences">Pure Sciences</option>
-                            <option value="Social Studies">Social Studies</option>
+                            <option value="" disabled>Select the most appropriate subject</option>
+                            <%
+                            var categories = ["Architecture", "Business", "Computer Science", "Creative Arts", "Education", "Engineering", "Health & Medicine", "Humanities", "Pure Sciences", "Social Studies"];
+                            categories.forEach(function(c) { %>
+                                <option value="<%=c%>"<% if (textbook.subject == c) { %> selected <%}%> ><%=c%></option>
+                            <% }); %>
                         </select>
                     </div></li>
                     <!-- class code -->
                     <li><div class="form-group">
                         <label for="classcode">Class Code<span></span></label>
-                        <input id="classcode" name="classcode" type="text" placeholder = " STAT 1101">
+                        <input id="classcode" name="classcode" type="text" value="<%=textbook.classcode%>">
                     </div></li>
                     <!-- class name -->
                     <li><div class="form-group">
                         <label for="classname">Class Name <span></span></label>
-                        <input id="classname" name="classname" type="text" placeholder=" Intro to Probability and Statistics"> 
+                        <input id="classname" name="classname" type="text" value="<%=textbook.classname%>"> 
                     </div></li>
                     <!-- professor -->
                     <li><div class="form-group">
                         <label for="professor">Professor <span></span></label>
-                        <input id="professor" name="professor" type="text" placeholder=" Dr. Gerwin">
+                        <input id="professor" name="professor" type="text" value="<%=textbook.professor%>">
                     </div></li>
                 </ul>
                 <div id="submit">
-                    <button type="submit">Ready to Sell!</button>
+                    <button type="submit">Update Listing</button>
                 </div>
             </div>
-            <div id="extra-images-wrap"></div>
-            <div id="hidden-images"></div>
+            <div id="extra-images-wrap">
+                <% for (i=0; i < textbook.images.length; i++) { %>
+                    <a href="<%=textbook.images[i]%>" <% if (i==0) { %> class="focused" <% } %>><img src="<%=textbook.images[i]%>" alt="textbook photo"></a>
+                <% } %>
+            </div>
+            <div></div>
         </form>
     </main>
     <%- include('../partials/footer.ejs') %>

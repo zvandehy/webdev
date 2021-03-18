@@ -3,6 +3,10 @@
     --image-size-with-padding:295px;
 }
 
+
+.hidden {
+    display:none;
+}
 .textbooks-view {
     display: grid;
     margin-top:20px;

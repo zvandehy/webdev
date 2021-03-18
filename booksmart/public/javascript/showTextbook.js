@@ -17,6 +17,7 @@ var readyImages = function () {
         $images[$images.length] = image
         // set up the event handlers for each link
         $(this).on("click", function (evt) {
+            console.log("clicked");
             // get the image URL and caption for each image and animate the caption
             var imageUrl = $(this).attr("href")
             $("#image").fadeOut("fast", function () {

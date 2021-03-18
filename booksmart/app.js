@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const textbookRoutes = require('./routes/textbookRoutes.js');
+const generalRoutes = require('./routes/generalRoutes.js');
 const methodOverride = require("method-override");
 
 //create application
@@ -18,10 +19,8 @@ app.use(morgan("tiny")); //log requests and responses in terminal
 app.use(methodOverride('_method')); //replace the request method with the value in the query field "_method"
 
 //set up routes
-app.use('/textbooks', textbookRoutes); //handle all requests with "/stories" prefix with router module
-app.get("/", (req, res) => {
-    res.render('index');
-});
+app.use('/textbooks', textbookRoutes); //handle all requests with "/textbooks" prefix with router module
+app.use("/", generalRoutes);
 
 // error handling should be last
 // 404 handler
@@ -39,8 +38,7 @@ app.use((err, req, res, next) => {
     }
 
     res.status(err.status);
-    // res.render("error", { error: err });
-    res.send("Error");
+    res.render("error", { error: err });
 });
 
 //start the server

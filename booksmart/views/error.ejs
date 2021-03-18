@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+
+<body>
+<div class="page-wrap">
+    <%- include("./partials/header.ejs") %>
+    <main class="page-main">
+      <div class="left-main">
+        <div id="description">
+            <h3><%= error.status %> Error</h3> 
+            <p><%= error.message %></p>
+        </div>
+      </div>
+      <div class="right-main">
+        <img src="/src/books-vector.jpg" alt="textbook vector">
+      </div>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </div>
+</body>
+</html>

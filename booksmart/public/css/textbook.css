@@ -19,7 +19,7 @@
     margin: auto;
 }
 
-#price {
+#price, .price {
     font-size:30px;
     font-weight: bold;
     color: rgb(245, 69, 69);
