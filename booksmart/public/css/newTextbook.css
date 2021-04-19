@@ -3,8 +3,14 @@ div.form-group {
     grid-template-columns: 170px auto;
 }
 
-div.form-group input, div.form-group select {
+div.form-group input, div.form-group select, .selectize-input {
     width: 80%;
+    height: 25px;
+}
+
+.item, .selectize-input input {
+    position:relative;
+    top:-5px;
 }
 
 .form-group input#title {

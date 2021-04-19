@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="/css/selectize.default.css">
     <link rel="stylesheet" href="/css/textbook.css"> 
     <link rel="stylesheet" href="/css/newTextbook.css">
     <link rel="stylesheet" href="/croppie/croppie.css">
@@ -13,6 +14,7 @@
     <script src="/croppie/croppie.min.js"></script>
     <script src="/javascript/newTextbook.js"></script>
     <script src="/javascript/showTextbook.js"></script>
+    <script src="/javascript/selectize.min.js"></script>
     <title>booksmart - Get books smarter!</title>
 </head>
 
@@ -21,9 +23,8 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <h1>Sell Your Textbook</h1>
-        <form class="page-main" action="/textbooks/<%= textbook.id %>?_method=PUT" onsubmit="return validate()" method="POST">
+        <form id="textbook-form" class="page-main" action="/textbooks/<%= textbook.id %>?_method=PUT" method="POST">
             <div class="img-wrap">
-                <!-- TODO: URL -->
                 <!-- TODO: Upload to server -->
                 <!-- TODO: Support multiple photos -->
                 <h2>Cover Photo <span>*</span></h2>
@@ -68,16 +69,17 @@
                         <label for="quality">Textbook Quality <span>*</span></label>
                         <select id="quality" name="quality" required>
                             <option value="" disabled>Select the most accurate quality</option>
+                            <option value="<%=textbook.quality%>"><%=textbook.quality%></option>
                             <%
                             var qualities = ["Like New", "Very Good", "Good", "Fair", "Poor"];
                             qualities.forEach(function(q) { %>
-                                <option value="<%=q%>"<% if (textbook.quality == q) { %> selected <%}%> ><%=q%></option>
+                                <% if (textbook.quality != q) { %><option value="<%=q%>"><%=q%></option> <% } %>
                             <% }); %>
                         </select>
                     </div></li>
                     <li><div class="form-group">
-                        <label for="imageurl">Image Url<span>*</span></label>
-                        <input id="imageurl" name="imageurl" type="text" value="<%=textbook.images[0]%>" required>
+                        <label for="images">Image Url<span>*</span></label>
+                        <input id="images" name="images" type="text" value="<%=textbook.images[0]%>" required>
                     </div></li>
                 </ul>
                 <h2>Class Info</h2>
@@ -87,10 +89,12 @@
                         <label for="subject">Subject Area <span>*</span></label>
                         <select id="subject" name="subject" required>
                             <option value="" disabled>Select the most appropriate subject</option>
+                            <option value="<%=textbook.subject%>"><%=textbook.subject%></option>
+                            <!-- TODO: Allow for categories other than these -->
                             <%
                             var categories = ["Architecture", "Business", "Computer Science", "Creative Arts", "Education", "Engineering", "Health & Medicine", "Humanities", "Pure Sciences", "Social Studies"];
                             categories.forEach(function(c) { %>
-                                <option value="<%=c%>"<% if (textbook.subject == c) { %> selected <%}%> ><%=c%></option>
+                                <% if (textbook.subject != c) { %><option value="<%=c%>"><%=c%></option> <% } %>
                             <% }); %>
                         </select>
                     </div></li>

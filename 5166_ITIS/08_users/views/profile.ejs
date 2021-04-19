@@ -1,0 +1,10 @@
+<%- include('./partials/header.ejs')%>
+<% if (user != null) { %>
+<h2>Welcome <%= user.firstName%> <%= user.lastName%></h2>
+<% } else { %>
+    <h2>Welcome! Please log in.</h2>
+<% } %>
+
+</body>
+
+</html>

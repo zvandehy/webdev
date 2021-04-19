@@ -1,8 +1,7 @@
 const model = require('../models/textbook.js');
 
 // GET /textbooks: send all textbooks to the user
-exports.index = (req, res) => {
-    let textbooks = model.find();
+exports.index = (req, res, next) => {
     let categorized = {
         "Architecture": [],
         "Business": [],
@@ -16,16 +15,26 @@ exports.index = (req, res) => {
         "Social Studies": [],
     };
 
-    textbooks.forEach((textbook) => {
-        if (textbook.subject) {
-            categorized[textbook.subject].push(textbook);
-        } else {
-            console.log("Textbook has no subject");
-            console.log(textbook);
-        }
-    });
 
-    res.render('./textbook/index', { categorized: categorized, count: textbooks.length }) //"/views" is implicit
+
+    model.find()
+        .then(textbooks => {
+            textbooks.forEach((textbook) => {
+                if (textbook.subject) {
+                    if (categorized[textbook.subject]) {
+                        categorized[textbook.subject].push(textbook);
+                    } else {
+                        categorized[textbook.subject] = [textbook];
+                    }
+
+                } else {
+                    console.log("Textbook has no subject");
+                    console.log(textbook);
+                }
+            });
+            res.render('./textbook/index', { categorized: categorized, count: textbooks.length })
+        })
+        .catch(err => next(err));
 };
 
 // // GET /textbooks/new: send the form to create a new listing
@@ -34,7 +43,8 @@ exports.new = (req, res) => {
 };
 
 // POST /textbooks
-exports.create = (req, res) => {
+exports.create = (req, res, next) => {
+    // TODO: upload image
     // var { fields, files } = await asyncBusboy(req);
     // var imageName = "";
     // files.map(file => {
@@ -46,64 +56,117 @@ exports.create = (req, res) => {
     //         errors.push({msg: "Invalid profile photo"});
     //     }
     // });
-    console.group("req");
-    console.log(req.url);
-    console.log(req.body);
-    console.groupEnd();
-    // save textbook in DB
-    let textbook = req.body;
-    model.save(textbook);
+    // console.group("req");
+    // console.log(req.url);
+    // console.log(req.body);
+    // console.groupEnd();
 
-    // simply redirect, will be captured by /stories endpoint above
-    res.redirect('/textbooks');
+    // save textbook in DB
+    let textbook = new model(req.body);
+    textbook.save()
+        .then(t => res.redirect('/textbooks'))
+        .catch(err => { //TODO: The user never sees this, I think because the ajax redirects as normal on .fail()
+            if (err.name === "ValidationError") {
+                err.status = 400;
+            }
+            next(err)
+        });
 };
 
 // GET /stories/:id
 exports.show = (req, res, next) => {
-    let textbook = model.findById(req.params.id);
-    if (textbook) {
-        res.render("./textbook/show", { textbook: textbook });
-    } else {
-        let err = new Error("Cannot find a textbook with id " + req.params.id);
-        err.status = 404;
-        next(err);
+    let id = req.params.id;
+    if (!id.match(/^[0-9a-fA-F]{24}/)) {
+        let err = new Error("Invalid textbook id");
+        err.status = 400;
+        return next(err);
     }
+
+    model.findById(id)
+        .then(textbook => {
+            if (textbook) {
+                res.render("./textbook/show", { textbook: textbook });
+            } else {
+                let err = new Error("Cannot find a textbook with id " + req.params.id);
+                err.status = 404;
+                next(err);
+            }
+        })
+        .catch(err => next(err));
 };
 
 // GET /textbooks/:id/edit
 exports.edit = (req, res, next) => {
-    let textbook = model.findById(req.params.id);
-    if (textbook) {
-        res.render("./textbook/edit", { textbook: textbook });
-    } else {
-        let err = new Error("Cannot find a textbook with id " + req.params.id);
-        err.status = 404;
-        next(err);
+    let id = req.params.id;
+    if (!id.match(/^[0-9a-fA-F]{24}/)) {
+        let err = new Error("Invalid textbook id");
+        err.status = 400;
+        return next(err);
     }
+
+    model.findById(id)
+        .then(textbook => {
+            if (textbook) {
+                res.render("./textbook/edit", { textbook: textbook });
+            } else {
+                let err = new Error("Cannot find a textbook with id " + req.params.id);
+                err.status = 404;
+                next(err);
+            }
+        })
+        .catch(err => next(err));
+
 };
 
 // PUT /textbooks/:id --> Update the textbook identified by id
 exports.update = (req, res, next) => {
+
+    console.log(req.body);
     // update this textbook in DB
-    let textbook = req.body;
     let id = req.params.id;
-    if (model.updateById(id, textbook)) {
-        res.redirect('/textbooks/' + id);
-    } else {
-        let err = new Error("Cannot find a textbook with id " + id);
-        err.status = 404;
-        err.method
-        next(err);
+    if (!id.match(/^[0-9a-fA-F]{24}/)) {
+        let err = new Error("Invalid textbook id");
+        err.status = 400;
+        return next(err);
     }
+
+    model.findByIdAndUpdate(id, req.body, { useFindAndModify: false, runValidators: true })
+        .then(textbook => {
+            if (textbook) {
+                res.redirect('/textbooks/' + id);
+            } else {
+                let err = new Error("Cannot find a textbook with id " + id);
+                err.status = 404;
+                err.method
+                next(err);
+            }
+        })
+        .catch(err => {
+            if (err.name === "ValidationError") {
+                err.status = 400;
+            }
+            next(err)
+        });
 };
 
 // DELETE /textbooks/:id: Delete the textbook listing identified by id
 exports.delete = (req, res, next) => {
-    if (model.deleteById(req.params.id)) {
-        res.redirect("/textbooks");
-    } else {
-        let err = new Error("Cannot find a textbook with id " + req.params.id);
-        err.status = 404;
-        next(err);
+    let id = req.params.id;
+    if (!id.match(/^[0-9a-fA-F]{24}/)) {
+        let err = new Error("Invalid textbook id");
+        err.status = 400;
+        return next(err);
     }
+
+    model.findByIdAndDelete(id, { useFindAndModify: false })
+        .then(textbook => {
+            if (textbook) {
+                res.redirect('/textbooks');
+            } else {
+                let err = new Error("Cannot find a textbook with id " + req.params.id);
+                err.status = 404;
+                next(err);
+            }
+        })
+        .catch(err => next(err));
 };

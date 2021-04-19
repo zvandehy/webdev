@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="/css/selectize.default.css">
     <link rel="stylesheet" href="/css/textbook.css"> 
     <link rel="stylesheet" href="/css/newTextbook.css">
     <link rel="stylesheet" href="/croppie/croppie.css">
@@ -13,6 +14,7 @@
     <script src="/croppie/croppie.min.js"></script>
     <script src="/javascript/newTextbook.js"></script>
     <script src="/javascript/showTextbook.js"></script>
+    <script src="/javascript/selectize.min.js"></script>
     <title>booksmart - Get books smarter!</title>
 </head>
 
@@ -40,11 +42,12 @@
                 </div>
             </div>
             <div class="info">
+                <!-- title -->
                 <div class="form-group">
                     <label for="title">Textbook Title <span>*</span></label>
-                    <input id="title" name="title" type="text" placeholder=" Examining Probability and Statistics" required>
+                    <input id="title" name="title" type="text" placeholder=" Examining Probability and Statistics">
                 </div>
-
+                <!-- price -->
                 <div class="form-group">
                     <label for="price">Asking Price ($) <span>*</span></label>
                     <div class="price"><input id="price" name="price" type="text" placeholder=" 20.00" required></div>
@@ -66,6 +69,7 @@
                     <li><div class="form-group">
                         <!-- quality -->
                         <label for="quality">Textbook Quality <span>*</span></label>
+                        <!-- <input type="text" id="input-tags" class="demo-default" value="awesome,neat"> -->
                         <select id="quality" name="quality" required>
                             <option value="" disabled selected>Select the most accurate quality</option>
                             <option value="Like New">Like New</option>
@@ -77,8 +81,8 @@
                     </div></li>
                     <!-- image URL (until I get the cropper to work) -->
                     <li><div class="form-group">
-                        <label for="imageurl">Image Url<span>*</span></label>
-                        <input id="imageurl" name="imageurl" type="text" placeholder=" image.png" required>
+                        <label for="images">Image Url<span>*</span></label>
+                        <input id="images" name="images" type="text" placeholder=" image.png" required>
                     </div></li>
                 </ul>
                 <h2>Class Info</h2>

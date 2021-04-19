@@ -76,31 +76,44 @@ $(function () {
 
 
 
-$(document).ready(function () {
-    // $("#textbook-form").on('submit', function (e) {
-    //     e.preventDefault();
-    //     var container = $('#hidden-images');
-    //     if (container.children("input").length > 0) {
-    //         for (img of container.children("input")) {
-    //             console.group("child: ");
-    //             console.log(img);
-    //             console.log(img.value);
-    //             console.groupEnd()
-    //         }
-    //         var form_data = $(this).serialize();
-    //         alert(form_data);
-    //         $.ajax({
-    //             url: "/textbooks",
-    //             type: "POST",
-    //             data: form_data
-    //         }).done(function (data) {
-    //             console.log(data);
-    //         });
-    //     } else {
-    //         alert("Please upload and crop a photo of your textbook.");
-    //     }
-    // });
-})
+// $(document).ready(function () {
+//     $("#textbook-form").on('submit', function (e) {
+//         e.preventDefault();
+//         // alert($(this).attr('action'));
+//         let href = $(this).attr('action');
+//         let method = "PUT";
+//         if (href == "/textbooks") {
+//             method = "POST";
+//         }
+//         // var container = $('#hidden-images');
+//         // if (container.children("input").length > 0) {
+//         //     for (img of container.children("input")) {
+//         //         console.group("child: ");
+//         //         console.log(img);
+//         //         console.log(img.value);
+//         //         console.groupEnd()
+//         //     }
+//         var form_data = $(this).serializeArray();
+//         form_data.push({ name: "images", value: $("#imageurl").val() });
+//         form_data = jQuery.param(form_data);
+//         // TODO: this is sending many PUT requests when updating
+//         $.ajax({
+//             url: href,
+//             type: method,
+//             data: form_data
+//         })
+//             .done(function (data) {
+//                 location.href = href;
+//             })
+//             .fail(function (data) { //TODO: Why does this fail on PUT?
+//                 location.href = href; 
+//             })
+
+//         // } else {
+//         //     alert("Please upload and crop a photo of your textbook.");
+//         // }
+//     });
+// })
 
 
 // function validate() {
