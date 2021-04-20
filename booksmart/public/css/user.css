@@ -10,8 +10,13 @@ table.centered button {
     border: none;
     height: 20px;
     cursor:pointer;
+    margin-top:10px;
 }
 
 input {
     border: 1px solid black
+}
+
+h1 {
+    margin-top:50px;
 }

@@ -204,7 +204,9 @@ body {
 }
 
 .flash {
+  position:absolute;
   width:100%;
+  top:85px;
 }
 
 .success {
@@ -213,4 +215,5 @@ body {
 
 .error {
   background-color:#b43836;
+  color:white;
 }
