@@ -1,0 +1,17 @@
+.centered {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+  
+table.centered button {
+    background-color:rgb(61, 61, 238);
+    color:white;
+    border: none;
+    height: 20px;
+    cursor:pointer;
+}
+
+input {
+    border: 1px solid black
+}

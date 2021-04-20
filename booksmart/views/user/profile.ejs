@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+<body>
+    <div class="page-wrap">
+        <%- include('../partials/header.ejs')%>
+        <main class="page-main">
+            <div class = "centered">
+                <h2>Welcome, <%=user.firstName%></h2>
+                <% if (textbooks.length) { %>
+                    <p>Here are your active listings:</p>
+                    <%textbooks.forEach(textbook => {%>
+                        <a href="/textbooks/<%=textbook.id%>"><p><%=textbook.title%></p></a>
+                    <% });
+                } else { %>
+                    <p>You do not have any textbooks for sale.</p>
+                <%}%>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs')%>
+    </div>
+</body>
+</html>

@@ -46,16 +46,19 @@
         <% } %>
         </div>
       <div class="sell-wrap">
+        <% if(user != textbook.owner._id) { %>
         <p>This seller has had <span id="confirmed-exchanges">1</span> confirmed exchange(s).</p>
         <div class="contact-wrap">
           <button type="button">Contact Seller</button>
         </div>
+        <% } else { %>
         <div class="update-delete">
           <form>
             <button id="update" type="submit" formmethod="GET" formaction = "/textbooks/<%=textbook.id%>/edit">Edit</button>
             <button id="delete" type="submit" formmethod="POST" formaction = "/textbooks/<%=textbook.id%>?_method=DELETE">Delete</button>
           </form>
         </div>
+        <% } %>
       </div>
     </main>
     <%- include('../partials/footer.ejs') %>

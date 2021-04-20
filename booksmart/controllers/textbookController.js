@@ -37,7 +37,7 @@ exports.index = (req, res, next) => {
         .catch(err => next(err));
 };
 
-// // GET /textbooks/new: send the form to create a new listing
+// GET /textbooks/new: send the form to create a new listing
 exports.new = (req, res) => {
     res.render('./textbook/new');
 };
@@ -63,6 +63,7 @@ exports.create = (req, res, next) => {
 
     // save textbook in DB
     let textbook = new model(req.body);
+    textbook.owner = req.session.user;
     textbook.save()
         .then(t => res.redirect('/textbooks'))
         .catch(err => { //TODO: The user never sees this, I think because the ajax redirects as normal on .fail()
@@ -76,18 +77,13 @@ exports.create = (req, res, next) => {
 // GET /stories/:id
 exports.show = (req, res, next) => {
     let id = req.params.id;
-    if (!id.match(/^[0-9a-fA-F]{24}/)) {
-        let err = new Error("Invalid textbook id");
-        err.status = 400;
-        return next(err);
-    }
 
-    model.findById(id)
+    model.findById(id).populate("owner", "exchanges")
         .then(textbook => {
             if (textbook) {
                 res.render("./textbook/show", { textbook: textbook });
             } else {
-                let err = new Error("Cannot find a textbook with id " + req.params.id);
+                let err = new Error("Cannot find a textbook with id " + id);
                 err.status = 404;
                 next(err);
             }

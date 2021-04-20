@@ -4,10 +4,31 @@
 <nav class="page-nav">
   <div id="navigation">
     <div class="nav-btn-container"><a class="nav-btn btn" href="/textbooks">View All Textbooks</a></div>
+    <% if(user) { %>
     <div class="nav-btn-container"><a class="nav-btn btn" href="/textbooks/new">Sell Your textbook</a></div>
+    <% } %>
   </div>
   <div id="logins">
-    <div class="nav-btn-container"><a class="nav-btn" id="login" href="#">Log in</a></div>
-    <div class="nav-btn-container"><a class="nav-btn" id="signup" href="#">Sign up</a></div>
+    <% if(!user) { %>
+      <div class="nav-btn-container"><a class="nav-btn user-btn" id="login" href="/users/login">Log in</a></div>
+      <div class="nav-btn-container"><a class="nav-btn user-btn" id="signup" href="/users/new">Sign up</a></div>
+  <% } else { %>
+      <div class="nav-btn-container"><a class="nav-btn user-btn" id="profile" href="/users/profile">Welcome, <%= user.firstName %>!</a></div>
+    <div class="nav-btn-container"><a class="nav-btn user-btn" id="logout" href="/users/logout">Logout</a></div>
+  <% } %>
   </div>
 </nav>
+    <% if(errorMessages.length > 0) {%>
+      <% errorMessages.forEach(message=>{%>
+          <div class='flash error'>
+              <%=message%>
+          </div>
+          <%});%>
+              <%}%>
+    <% if(successMessages.length > 0) {%>
+        <% successMessages.forEach(message=>{%>
+            <div class='flash success'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>

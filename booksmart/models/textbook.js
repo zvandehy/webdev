@@ -12,6 +12,7 @@ const textbookSchema = new Schema({
     classname: { type: String },
     professor: { type: String },
     images: { type: [String], required: [true, "images is required"] },
+    owner: { type: Schema.Types.ObjectId, ref: 'User' },
 },
     { timestamps: true }
 );

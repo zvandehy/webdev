@@ -146,12 +146,12 @@ body {
   color: var(--icon);
 }
 
-#login, #signup {
+.user-btn {
   background-color:inherit;
   border: 2px solid var(--icon);
 }
 
-#login:hover, #signup:hover {
+.user-btn:hover {
   background-color:var(--icon-dark);
   border-color:var(--icon-dark);
   color:var(--bg);
@@ -201,4 +201,16 @@ body {
   text-align: start;
   width:60%;
   margin-top:auto;
+}
+
+.flash {
+  width:100%;
+}
+
+.success {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color:#b43836;
 }
