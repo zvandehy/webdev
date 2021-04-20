@@ -13,7 +13,7 @@
       <div class="nav-btn-container"><a class="nav-btn user-btn" id="login" href="/users/login">Log in</a></div>
       <div class="nav-btn-container"><a class="nav-btn user-btn" id="signup" href="/users/new">Sign up</a></div>
   <% } else { %>
-      <div class="nav-btn-container"><a class="nav-btn user-btn" id="profile" href="/users/profile">Welcome, <%= user.firstName %>!</a></div>
+      <div class="nav-btn-container"><a class="nav-btn user-btn" id="profile" href="/users/profile">Welcome, <%= name %>!</a></div>
     <div class="nav-btn-container"><a class="nav-btn user-btn" id="logout" href="/users/logout">Logout</a></div>
   <% } %>
   </div>
