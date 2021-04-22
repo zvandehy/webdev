@@ -18,17 +18,21 @@
   <% } %>
   </div>
 </nav>
-    <% if(errorMessages.length > 0) {%>
-      <% errorMessages.forEach(message=>{%>
-          <div class='flash error'>
+<div id="flash-container">
+  <!-- <div class='flash success'>test success message</div> -->
+  <% if(errorMessages.length > 0) {%>
+    <% errorMessages.forEach(message=>{%>
+        <div class='flash error'>
+            <%=message%>
+        </div>
+        <%});%>
+            <%}%>
+  <% if(successMessages.length > 0) {%>
+      <% successMessages.forEach(message=>{%>
+          <div class='flash success'>
               <%=message%>
           </div>
           <%});%>
               <%}%>
-    <% if(successMessages.length > 0) {%>
-        <% successMessages.forEach(message=>{%>
-            <div class='flash success'>
-                <%=message%>
-            </div>
-            <%});%>
-                <%}%>
+</div>
+    

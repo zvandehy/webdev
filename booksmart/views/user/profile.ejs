@@ -17,10 +17,18 @@
                 <h2>Welcome, <%=user.firstName%></h2>
                 <% if (textbooks.length) { %>
                     <p>Here are your active listings:</p>
-                    <%textbooks.forEach(textbook => {%>
-                        <a href="/textbooks/<%=textbook.id%>"><p><%=textbook.title%></p></a>
-                    <% });
-                } else { %>
+                    <form>
+                        <table class="centered">
+                        <%textbooks.forEach(textbook => {%>
+                            <tr>
+                                <th><a href="/textbooks/<%=textbook.id%>"><%=textbook.title%></a></th>
+                                <td><button id="update" type="submit" formmethod="GET" formaction = "/textbooks/<%=textbook.id%>/edit">Edit</button></td>
+                                <td><button id="delete" type="submit" formmethod="POST" formaction = "/textbooks/<%=textbook.id%>?_method=DELETE">Delete</button></td>
+                            </tr>
+                        <% }); %>
+                        </table>
+                    </form>
+                <% } else { %>
                     <p>You do not have any textbooks for sale.</p>
                 <%}%>
             </div>

@@ -109,15 +109,6 @@
     font-size: 12px;
 }
 
-#update {
-    background-color: var(--icon);
-    color:black;
-}
-
-#delete {
-    background-color:rgb(245, 69, 69);
-}
-
 #confirmed-exchanges {
     border-radius: 3px;
     padding:2px 4px;

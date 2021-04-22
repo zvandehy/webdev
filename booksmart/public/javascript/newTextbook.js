@@ -72,6 +72,38 @@ $(function () {
             readyImages();
         });
     });
+
+    $('#quality').selectize({
+        persist: false,
+        create: true,
+        createOnBlur: true,
+        highlight: true,
+        openOnFocus: true,
+        maxItems: 1,
+        allowEmptyOption: false,
+        create: function (input) {
+            return {
+                value: input,
+                text: input
+            }
+        }
+    })
+
+    $('#subject').selectize({
+        persist: false,
+        create: true,
+        createOnBlur: true,
+        highlight: true,
+        openOnFocus: true,
+        maxItems: 1,
+        allowEmptyOption: false,
+        create: function (input) {
+            return {
+                value: input,
+                text: input
+            }
+        }
+    })
 });
 
 

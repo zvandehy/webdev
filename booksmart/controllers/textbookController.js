@@ -65,7 +65,10 @@ exports.create = (req, res, next) => {
     let textbook = new model(req.body);
     textbook.owner = req.session.user;
     textbook.save()
-        .then(t => res.redirect('/textbooks'))
+        .then(t => {
+            req.flash("success", "Successfully created the textbook listing!")
+            res.redirect('/textbooks');
+        })
         .catch(err => {
             if (err.name === "ValidationError") {
                 req.flash('error', err.message);
@@ -129,6 +132,7 @@ exports.update = (req, res, next) => {
     model.findByIdAndUpdate(id, req.body, { useFindAndModify: false, runValidators: true })
         .then(textbook => {
             if (textbook) {
+                req.flash("success", "Successfully updated the textbook listing!")
                 res.redirect('/textbooks/' + id);
             } else {
                 let err = new Error("Cannot find a textbook with id " + id);
@@ -157,6 +161,7 @@ exports.delete = (req, res, next) => {
     model.findByIdAndDelete(id, { useFindAndModify: false })
         .then(textbook => {
             if (textbook) {
+                req.flash("success", "Successfully deleted the textbook listing!")
                 res.redirect('/textbooks');
             } else {
                 let err = new Error("Cannot find a textbook with id " + req.params.id);
