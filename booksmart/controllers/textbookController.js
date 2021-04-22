@@ -66,11 +66,11 @@ exports.create = (req, res, next) => {
     textbook.owner = req.session.user;
     textbook.save()
         .then(t => res.redirect('/textbooks'))
-        .catch(err => { //TODO: The user never sees this, I think because the ajax redirects as normal on .fail()
+        .catch(err => {
             if (err.name === "ValidationError") {
-                err.status = 400;
+                req.flash('error', err.message);
+                res.redirect("back");
             }
-            next(err)
         });
 };
 
@@ -139,9 +139,9 @@ exports.update = (req, res, next) => {
         })
         .catch(err => {
             if (err.name === "ValidationError") {
-                err.status = 400;
+                req.flash('error', err.message);
+                res.redirect("back");
             }
-            next(err)
         });
 };
 

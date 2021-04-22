@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "607dea10dfdf8725311fd349"
+  },
+  "firstName": "fishy",
+  "lastName": "mcfishface",
+  "email": "fish@gmail.com",
+  "password": "$2b$10$4e.UKHujc2lX4Mz2I8YWWO4w9T3DbcXnKCEzWjuMZ3t6i/8ICL56e",
+  "exchanges": "0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "607e02247c7a5e42222f4a17"
+  },
+  "firstName": "Piggy",
+  "lastName": "Pigface",
+  "email": "pig@gmail.com",
+  "password": "$2b$10$YlrsXfH8G0v3OhiByeuWp.HPX0QX/rrksx7r5QXR0FMgm7pthYZIW",
+  "exchanges": "0",
+  "__v": 0
+}]
