@@ -6,9 +6,9 @@ const userSchema = new Schema({
   lastName: { type: String, required: [true, 'last name is required'] },
   email: { type: String, required: [true, 'email address is required'], unique: [true, 'this email address has already been used'] },
   password: { type: String, required: [true, 'password is required'] },
-  exchanges: { type: String, required: [true, 'a number of successful exchanges is required'] },
-}
-);
+  exchanges: { type: Number, required: [true, 'a number of successful exchanges is required'] },
+  bought: [{ type: Schema.Types.ObjectId, ref: 'Textbook' }]
+});
 
 userSchema.pre('save', function (next) {
   let user = this;

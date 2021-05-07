@@ -1,21 +1,34 @@
 [{
   "_id": {
-    "$oid": "607dea10dfdf8725311fd349"
+    "$oid": "60955e0bf66f6066378736ec"
   },
-  "firstName": "fishy",
-  "lastName": "mcfishface",
+  "bought": [],
+  "firstName": "Fishy",
+  "lastName": "McFishFace",
   "email": "fish@gmail.com",
-  "password": "$2b$10$4e.UKHujc2lX4Mz2I8YWWO4w9T3DbcXnKCEzWjuMZ3t6i/8ICL56e",
-  "exchanges": "0",
+  "password": "$2b$10$dFWwhz5yxiBIGvoVSrmbNe2ElhWP0CNNn3WR6A5te23GHTIxRkqXS",
+  "exchanges": 0,
   "__v": 0
 },{
   "_id": {
-    "$oid": "607e02247c7a5e42222f4a17"
+    "$oid": "60955e18f66f6066378736ed"
   },
+  "bought": [],
   "firstName": "Piggy",
-  "lastName": "Pigface",
+  "lastName": "McPigFace",
   "email": "pig@gmail.com",
-  "password": "$2b$10$YlrsXfH8G0v3OhiByeuWp.HPX0QX/rrksx7r5QXR0FMgm7pthYZIW",
-  "exchanges": "0",
+  "password": "$2b$10$1R9ZkHhoF8BttFIJqp9RieZ5QmuGTKT/LqUjHsdV4zvdYFYqmJBAK",
+  "exchanges": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60955e24f66f6066378736ee"
+  },
+  "bought": [],
+  "firstName": "Zeke",
+  "lastName": "McZekeFace",
+  "email": "zeke@gmail.com",
+  "password": "$2b$10$8cyt/NqzfN/MU7hlAKsQ6.K0e2h7f47E9oIQ0m8XD1izVa4Y56gVm",
+  "exchanges": 0,
   "__v": 0
 }]

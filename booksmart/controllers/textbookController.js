@@ -1,4 +1,6 @@
 const model = require('../models/textbook.js');
+const Inquiry = require('../models/inquiry.js');
+const Message = require('../models/message.js');
 
 // GET /textbooks: send all textbooks to the user
 exports.index = (req, res, next) => {
@@ -17,7 +19,7 @@ exports.index = (req, res, next) => {
 
 
 
-    model.find()
+    model.find({ status: "active" })
         .then(textbooks => {
             textbooks.forEach((textbook) => {
                 if (textbook.subject) {
@@ -97,11 +99,6 @@ exports.show = (req, res, next) => {
 // GET /textbooks/:id/edit
 exports.edit = (req, res, next) => {
     let id = req.params.id;
-    if (!id.match(/^[0-9a-fA-F]{24}/)) {
-        let err = new Error("Invalid textbook id");
-        err.status = 400;
-        return next(err);
-    }
 
     model.findById(id)
         .then(textbook => {
@@ -119,16 +116,8 @@ exports.edit = (req, res, next) => {
 
 // PUT /textbooks/:id --> Update the textbook identified by id
 exports.update = (req, res, next) => {
-
-    console.log(req.body);
-    // update this textbook in DB
     let id = req.params.id;
-    if (!id.match(/^[0-9a-fA-F]{24}/)) {
-        let err = new Error("Invalid textbook id");
-        err.status = 400;
-        return next(err);
-    }
-
+    console.log(req.body);
     model.findByIdAndUpdate(id, req.body, { useFindAndModify: false, runValidators: true })
         .then(textbook => {
             if (textbook) {
@@ -152,11 +141,6 @@ exports.update = (req, res, next) => {
 // DELETE /textbooks/:id: Delete the textbook listing identified by id
 exports.delete = (req, res, next) => {
     let id = req.params.id;
-    if (!id.match(/^[0-9a-fA-F]{24}/)) {
-        let err = new Error("Invalid textbook id");
-        err.status = 400;
-        return next(err);
-    }
 
     model.findByIdAndDelete(id, { useFindAndModify: false })
         .then(textbook => {
@@ -169,5 +153,22 @@ exports.delete = (req, res, next) => {
                 next(err);
             }
         })
-        .catch(err => next(err));
+        .then(textbook => {
+            Inquiry.find({ textbook: id })
+                .then(inquiries => {
+                    inquiries.forEach(inquiry => {
+                        console.log("inquiries")
+                        Message.deleteMany({ inquiry: inquiry._id })
+                            .then(done => { })
+                            .catch(err => { next(err); });
+                    })
+                })
+                .then(done => {
+                    Inquiry.deleteMany({ textbook: id })
+                        .then(done => { })
+                        .catch(err => { next(err); })
+                })
+                .catch(err => { next(err) })
+        })
+        .catch(err => { next(err) })
 };

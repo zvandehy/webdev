@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>booksmart - Get books smarter!</title>
+</head>
+<body>
+    <div class="page-wrap">
+        <%- include('../partials/header.ejs')%>
+        <main class="page-main">
+            <div class = "centered">
+                <h2>This is an inquiry for <a href="/textbooks/<%=inquiry.textbook.id%>"><%=inquiry.textbook.title%></a></h2>
+                <form>
+                <% if (inquiry.inquiredBy != user) { %>
+                    <% if (inquiry.status == "pending") { %>
+                        <button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Confirm Sale</button>
+                    <% } else if (inquiry.status == "pending_inquirer") {  %>
+                        <button id="confirm" class="pending" type="submit">Pending Confirmation</button>
+                    <% } else { %>
+                        <button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Pending Your Confirmation</button>
+                <% } } else { %>
+                    <% if (inquiry.status == "pending") { %>
+                        <button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Confirm Sale</button>
+                    <% } else if (inquiry.status == "pending_owner") {  %>
+                        <button id="confirm" class="pending" type="submit">Pending Confirmation</button>
+                    <% } else { %>
+                        <button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Pending Your Confirmation</button>
+                    <% } %>
+                <% } %> 
+                <button id="delete" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>?_method=DELETE">Delete Inquiry</button>  
+                </form>
+                <!--TODO: Agree to sale  -->
+              <% if (messages.length) { %>
+                    <form>
+                        <table id="messages" class="centered">
+                        <%messages.forEach(message => {%>
+                            <tr>
+                                <th><%=message.sender.firstName%></th>
+                                <td class="text"><%=message.text%></td>
+                                <td class="date"><%=message.createdAt.toLocaleString()%></td>
+                            </tr>
+                        <% }); %>
+                        </table>
+                        <form id="contact-form" style="display:none;">
+                          <h3>Reply:</h3>
+                          <p><textarea id="text" name="text" placeholder="Send a reply message..." minlength="1"></textarea></p>
+                          <input id="textbook" name="textbook" value="<%=inquiry.textbook.id%>" style="display:none;">
+                          <button type="submit" id="update" formmethod="POST" formaction="/inquiries/<%=inquiry.id%>?_method=PUT">Reply</button>
+                        </form>
+                    </form>
+                <% } else { %>
+                    <p>There are no messages.</p>
+                <%}%>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs')%>
+    </div>
+</body>
+</html>

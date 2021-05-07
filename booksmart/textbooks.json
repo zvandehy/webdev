@@ -1,157 +1,170 @@
-[{
-  "_id": {
-    "$oid": "607dfc7476059d3a1be0543d"
+[
+  {
+    "_id": {
+      "$oid": "60955e87f66f6066378736ef"
+    },
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/51rYOtjqSIL._SX396_BO1,204,203,200_.jpg"
+    ],
+    "status": "active",
+    "title": "All About Fish",
+    "price": 22.22,
+    "author": "Sharky Shark",
+    "isbn": "978-4-4438-8144-0",
+    "quality": "Very Good",
+    "subject": "Computer Science",
+    "classcode": "HLTH 1001",
+    "classname": "How Fish Do Computer Science",
+    "professor": "Dr. Shark",
+    "owner": {
+      "$oid": "60955e0bf66f6066378736ec"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:36:39.838Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:36:39.838Z"
+    },
+    "__v": 0
   },
-  "images": [
-    "https://images-na.ssl-images-amazon.com/images/I/51rYOtjqSIL._SX396_BO1,204,203,200_.jpg"
-  ],
-  "title": "All about Fish",
-  "price": 22.22,
-  "author": "Sharky Shark",
-  "isbn": "912-1-12-12312",
-  "quality": "Very Good",
-  "subject": "Computer Science",
-  "classcode": "HLTH 1001",
-  "classname": "How Fish do Computer Science",
-  "professor": "Dr. Shark",
-  "owner": {
-    "$oid": "607dea10dfdf8725311fd349"
+  {
+    "_id": {
+      "$oid": "60955ebbf66f6066378736f0"
+    },
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/816m61w28dL.jpg"
+    ],
+    "status": "active",
+    "title": "Brown Bear Brown Bear",
+    "price": 120,
+    "author": "Bill Martin",
+    "isbn": "978-1-3569-3200-9",
+    "quality": "Poor",
+    "subject": "Architecture",
+    "classcode": "BEAR 1100",
+    "classname": "What do you see?",
+    "professor": "Dr. Bear",
+    "owner": {
+      "$oid": "60955e0bf66f6066378736ec"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:37:31.864Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:37:31.864Z"
+    },
+    "__v": 0
   },
-  "createdAt": {
-    "$date": "2021-04-19T21:56:04.656Z"
+  {
+    "_id": {
+      "$oid": "60955ef0f66f6066378736f1"
+    },
+    "images": [
+      "https://www.meijer.com/content/dam/meijer/product/0978/03/9480/00/0978039480001_2_A1C1_1200.png"
+    ],
+    "status": "active",
+    "title": "The Cat in the Hat",
+    "price": 40,
+    "author": "Dr. Seuss",
+    "isbn": "978-2-0067-0702-2",
+    "quality": "Good",
+    "subject": "Architecture",
+    "classcode": "CATS 4444",
+    "classname": "Architecture in Children's Literature",
+    "professor": "Dr. Seuss",
+    "owner": {
+      "$oid": "60955e0bf66f6066378736ec"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:38:24.520Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:38:24.520Z"
+    },
+    "__v": 0
   },
-  "updatedAt": {
-    "$date": "2021-04-22T13:36:33.387Z"
+  {
+    "_id": {
+      "$oid": "60955f3ff66f6066378736f2"
+    },
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/91mYKCNy4VL.jpg"
+    ],
+    "status": "active",
+    "title": "If You Gave a Mouse a Cookie",
+    "price": 5,
+    "author": "Laura Joffe Numeroff",
+    "isbn": "978-5-3297-4067-7",
+    "quality": "Like New",
+    "subject": "Architecture",
+    "classcode": "MOUS 3030",
+    "classname": "Glass Cielings and Breaking Through",
+    "professor": "Dr. Mouse",
+    "owner": {
+      "$oid": "60955e18f66f6066378736ed"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:39:43.540Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:39:43.540Z"
+    },
+    "__v": 0
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "608179cb1ad6b94cfefbfe1a"
+  {
+    "_id": {
+      "$oid": "60955f71f66f6066378736f3"
+    },
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/en/9/9c/A_Fish_Out_Of_Water_%28book%29_cover_art.jpg"
+    ],
+    "status": "active",
+    "title": "A Fish Out of Water",
+    "price": 14.01,
+    "author": "Helen Palmer",
+    "isbn": "978-5-1219-1667-6",
+    "quality": "Fair",
+    "subject": "Computer Science",
+    "classcode": "FISH 1111",
+    "classname": "Project Management",
+    "professor": "Dr. Fish",
+    "owner": {
+      "$oid": "60955e18f66f6066378736ed"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:40:33.344Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:40:33.344Z"
+    },
+    "__v": 0
   },
-  "images": [
-    "https://images-na.ssl-images-amazon.com/images/I/816m61w28dL.jpg"
-  ],
-  "title": "Brown Bear Brown Bear",
-  "price": 120,
-  "author": "Bill Martin",
-  "isbn": "123-123-12-1234",
-  "quality": "Poor",
-  "subject": "Architecture",
-  "classcode": "BEAR 1100",
-  "classname": "What do you see?",
-  "professor": "Dr. Bear",
-  "owner": {
-    "$oid": "607e02247c7a5e42222f4a17"
-  },
-  "createdAt": {
-    "$date": "2021-04-22T13:27:39.373Z"
-  },
-  "updatedAt": {
-    "$date": "2021-04-22T13:27:39.373Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60817a9b1ad6b94cfefbfe1b"
-  },
-  "images": [
-    "https://www.meijer.com/content/dam/meijer/product/0978/03/9480/00/0978039480001_2_A1C1_1200.png"
-  ],
-  "title": "The Cat in the Hat",
-  "price": 40,
-  "author": "Dr. Seuss",
-  "isbn": "931-12-123-1223",
-  "quality": "Good",
-  "subject": "Architecture",
-  "classcode": "CATS 4444",
-  "classname": "Architecture in Children's Literature",
-  "professor": "Dr. Seuss",
-  "owner": {
-    "$oid": "607e02247c7a5e42222f4a17"
-  },
-  "createdAt": {
-    "$date": "2021-04-22T13:31:07.802Z"
-  },
-  "updatedAt": {
-    "$date": "2021-04-22T13:31:07.802Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60817ba01ad6b94cfefbfe1c"
-  },
-  "images": [
-    "https://images-na.ssl-images-amazon.com/images/I/91mYKCNy4VL.jpg"
-  ],
-  "title": "If You Gave a Mouse a Cookie",
-  "price": 5,
-  "author": "Laura Joffe Numeroff",
-  "isbn": "912-7-48142-123",
-  "quality": "Like New",
-  "subject": "Architecture",
-  "classcode": "MOUS 3030",
-  "classname": "Glass Cielings and Breaking Through",
-  "professor": "Dr. Mouse",
-  "owner": {
-    "$oid": "607e02247c7a5e42222f4a17"
-  },
-  "createdAt": {
-    "$date": "2021-04-22T13:35:28.743Z"
-  },
-  "updatedAt": {
-    "$date": "2021-04-22T13:35:28.743Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60817c401ad6b94cfefbfe1d"
-  },
-  "images": [
-    "https://upload.wikimedia.org/wikipedia/en/9/9c/A_Fish_Out_Of_Water_%28book%29_cover_art.jpg"
-  ],
-  "title": "A Fish Out of Water",
-  "price": 14.01,
-  "author": "Helen Palmer",
-  "isbn": "942-485-421245-12",
-  "quality": "Fair",
-  "subject": "Computer Science",
-  "classcode": "FISH 1111",
-  "classname": "Project Management",
-  "professor": "Dr. Fish",
-  "owner": {
-    "$oid": "607dea10dfdf8725311fd349"
-  },
-  "createdAt": {
-    "$date": "2021-04-22T13:38:08.211Z"
-  },
-  "updatedAt": {
-    "$date": "2021-04-22T13:38:08.211Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60817ca31ad6b94cfefbfe1e"
-  },
-  "images": [
-    "https://images-na.ssl-images-amazon.com/images/I/91ZigOKW3xL.jpg"
-  ],
-  "title": "The Tale of Despereaux",
-  "price": 25,
-  "author": "Kate DiCamillo",
-  "isbn": "754-1-128115-12",
-  "quality": "Like New",
-  "subject": "Computer Science",
-  "classcode": "ITSC 2114",
-  "classname": "Desperate Data Structures",
-  "professor": "Dr. Zeke",
-  "owner": {
-    "$oid": "607dea10dfdf8725311fd349"
-  },
-  "createdAt": {
-    "$date": "2021-04-22T13:39:47.044Z"
-  },
-  "updatedAt": {
-    "$date": "2021-04-22T13:39:47.044Z"
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "60955f9cf66f6066378736f4"
+    },
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/91ZigOKW3xL.jpg"
+    ],
+    "status": "active",
+    "title": "The Tale of Desperaux",
+    "price": 25,
+    "author": "Kate DiCamillo",
+    "isbn": "978-1-3796-8913-3",
+    "quality": "Like New",
+    "subject": "Computer Science",
+    "classcode": "ITSC 2114",
+    "classname": "Desperate Data Structures",
+    "professor": "Dr. Zeke",
+    "owner": {
+      "$oid": "60955e18f66f6066378736ed"
+    },
+    "createdAt": {
+      "$date": "2021-05-07T15:41:16.646Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-07T15:41:16.646Z"
+    },
+    "__v": 0
+  }
+]

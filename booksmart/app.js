@@ -2,9 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const textbookRoutes = require('./routes/textbookRoutes.js');
 const generalRoutes = require('./routes/generalRoutes.js');
+const inquiryRoutes = require('./routes/inquiryRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');
 const methodOverride = require("method-override");
 const mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
@@ -54,6 +56,7 @@ app.use(methodOverride('_method')); //replace the request method with the value 
 //set up routes
 app.use('/textbooks', textbookRoutes); //handle all requests with "/textbooks" prefix with router module
 app.use('/users', userRoutes);
+app.use('/inquiries', inquiryRoutes);
 app.use("/", generalRoutes);
 
 // error handling should be last

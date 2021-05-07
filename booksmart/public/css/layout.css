@@ -238,3 +238,11 @@ body {
   color:white;
   font-weight: bold;
 }
+
+#confirm {
+  border:none;
+  border-radius: 3px;
+  margin:3px;
+  color:white;
+  font-weight: bold;
+}

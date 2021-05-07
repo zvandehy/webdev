@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Textbook = require('../models/textbook');
+const Inquiry = require('../models/inquiry');
 
 exports.new = (req, res) => {
     res.render('./user/new');
@@ -58,10 +59,38 @@ exports.login = (req, res, next) => {
 
 exports.profile = (req, res, next) => {
     let id = req.session.user;
-    Promise.all([User.findById(id), Textbook.find({ owner: id })])
+    Promise.all([User.findById(id).populate("bought"), Textbook.find({ owner: id }), Inquiry.find({ inquiredBy: id }).populate("textbook")])
         .then(results => {
-            const [user, textbooks] = results;
-            res.render('./user/profile', { user, textbooks });
+            const [user, textbooks, inquiries] = results;
+            active = [];
+            sold = [];
+            textbooks.forEach(book => {
+                if (book.status == "active") {
+                    active.push(book);
+                } else {
+                    sold.push(book);
+                }
+            });
+
+            promises = [];
+
+
+            received = [];
+            active.forEach(book => {
+                promises.push(Inquiry.find({ textbook: book._id }).populate("textbook")
+                    .then(books => { books.forEach(b => received.push(b)) })
+                    .catch(err => next(err)));
+            });
+
+
+
+
+            Promise.all(promises)
+                .then(p => {
+                    res.render('./user/profile', { user, active, sold, inquiries, received });
+                })
+                .catch(err => next(err));
+
         })
         .catch(err => next(err));
 };

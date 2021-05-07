@@ -13,6 +13,7 @@ const textbookSchema = new Schema({
     professor: { type: String },
     images: { type: [String], required: [true, "images is required"] },
     owner: { type: Schema.Types.ObjectId, ref: 'User' },
+    status: { type: String, required: [true, "status is required"], "default": "active", "enum": ["active", "sold"] },
 },
     { timestamps: true }
 );

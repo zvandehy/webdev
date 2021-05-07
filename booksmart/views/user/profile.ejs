@@ -15,11 +15,12 @@
         <main class="page-main">
             <div class = "centered">
                 <h2>Welcome, <%=user.firstName%></h2>
-                <% if (textbooks.length) { %>
+                <!-- active listings -->
+                <% if (active.length) { %>
                     <p>Here are your active listings:</p>
                     <form>
                         <table class="centered">
-                        <%textbooks.forEach(textbook => {%>
+                        <%active.forEach(textbook => {%>
                             <tr>
                                 <th><a href="/textbooks/<%=textbook.id%>"><%=textbook.title%></a></th>
                                 <td><button id="update" type="submit" formmethod="GET" formaction = "/textbooks/<%=textbook.id%>/edit">Edit</button></td>
@@ -30,6 +31,83 @@
                     </form>
                 <% } else { %>
                     <p>You do not have any textbooks for sale.</p>
+                <%}%>
+                <!-- sold books -->
+                <% if (sold.length) { %>
+                    <p>Here are your sold textbooks:</p>
+                    <form>
+                        <table class="centered">
+                        <%sold.forEach(textbook => {%>
+                            <tr>
+                                <th><a href="/textbooks/<%=textbook.id%>"><%=textbook.title%></a></th>
+                            </tr>
+                        <% }); %>
+                        </table>
+                    </form>
+                <% } else { %>
+                    <p>You have not sold any textbooks.</p>
+                <%}%>
+                <!-- inquired -->
+                <% if (inquiries.length) { %>
+                    <p>You have inquired about these textbooks:</p>
+                    <form>
+                        <table class="centered">
+                        <%inquiries.forEach(inquiry => { %>
+                            <tr>
+                                <th><a href="/inquiries/<%=inquiry.id%>"><%=inquiry.textbook.title%></a></th>
+                                <% if (inquiry.status == "pending") { %>
+                                    <td><button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Confirm Sale</button></td>
+                                <% } else if (inquiry.status == "pending_owner") {  %>
+                                    <td><button id="confirm" class="pending" type="submit">Pending Confirmation</button></td>
+                                <% } else { %>
+                                    <td><button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Pending Your Confirmation</button></td>
+                                <% } %>
+                                <td><button id="delete" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>?_method=DELETE">Delete Inquiry</button></td>
+                            </tr>
+                        <% }); %>
+                        </table>
+                    </form>
+                <% } else { %>
+                    <p>You have not inquired about any textbooks.</p>
+                <%}%>
+                 <!-- inquiris receieved -->
+                 <% if (received.length) { %>
+                    <p>You have received inquiries for these textbooks:</p>
+                    <form>
+                        <table class="centered">
+                        <%received.forEach(inquiry => { %>
+                            <tr>
+                                <th><a href="/inquiries/<%=inquiry.id%>"><%=inquiry.textbook.title%></a></th>
+                                    <% if (inquiry.status == "pending") { %>
+                                        <td><button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Confirm Sale</button></td>
+                                    <% } else if (inquiry.status == "pending_inquirer") {  %>
+                                        <td><button id="confirm" class="pending" type="submit">Pending Confirmation</button></td>
+                                    <% } else { %>
+                                        <td><button id="confirm" class="confirm" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>/confirm?_method=PUT">Pending Your Confirmation</button></td>
+                                    <% } %>
+                               
+                                <td><button id="delete" type="submit" formmethod="POST" formaction = "/inquiries/<%=inquiry.id%>?_method=DELETE">Reject Inquiry</button></td>
+                            </tr>
+                        <% }); %>
+                        </table>
+                    </form>
+                <% } else { %>
+                    <p>You have not received any inquiries.</p>
+                <%}%>
+                <!-- bought -->
+                <% if (user.bought.length) { %>
+                    <p>You have previously bought these textbooks:</p>
+                    <form>
+                        <table class="centered">
+                        <% user.bought.forEach(textbook => {%>
+                            <tr>
+                                <th><a href="/textbooks/<%=textbook.id%>"><%=textbook.title%></a></th>
+                            </tr>
+                        <% }); %>
+                        </table>
+                    </form>
+                <% } else { %>
+                    <p>You have not bought any textbooks.</p>
                 <%}%>
             </div>
         </main>

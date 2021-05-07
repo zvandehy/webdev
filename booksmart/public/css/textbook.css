@@ -79,7 +79,7 @@
 .sell-wrap {
     margin:auto;
 }
-.sell-wrap button {
+.sell-wrap button, .contact-wrap button a, #contact-form button {
     height:55px;
     width: 140px;
     border-radius: 3px;
@@ -89,7 +89,13 @@
     cursor:pointer;
     margin-top:5px;
     font-size:14px;
+    text-decoration: none;
 }
+textarea {
+    width:100%;
+    height:200px;
+}
+
 .sell-wrap * {
     display: inline;
 }
@@ -114,4 +120,8 @@
     padding:2px 4px;
     color:var(--font-dark);
     border:1px solid rgb(168, 168, 168)
+}
+
+.sold {
+    color:red;
 }

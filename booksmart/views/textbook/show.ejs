@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/searchbar.css">
     <link rel="stylesheet" href="/css/textbook.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="/javascript/showTextbook.js"></script>
     <title>booksmart - Get books smarter!</title>
 </head>
@@ -24,7 +26,10 @@
         <% } %>
       </div>
       <div class="info">
-          <h1 id="textbook-name"><%= textbook.title %></h1>
+        <% if (textbook.status == "sold") { %>
+          <h1 class="sold">SOLD</h1>
+          <% } %>  
+        <h1 id="textbook-name"><%= textbook.title %></h1>
           <div id="price">$<%= textbook.price %></div>
           <h2>Textbook Info</h2>
           <ul>
@@ -47,10 +52,16 @@
         </div>
       <div class="sell-wrap">
         <% if(user != textbook.owner._id) { %>
-        <p>This seller has had <span id="confirmed-exchanges">1</span> confirmed exchange(s).</p>
+        <p>This seller has had <span id="confirmed-exchanges"><%= textbook.owner.exchanges%></span> confirmed exchange(s).</p>
         <div class="contact-wrap">
-          <button type="button">Contact Seller</button>
+          <a href="#contact-form" rel="modal:open"><button type="button">Contact Seller</button></a>
         </div>
+        <form action="" id="contact-form" style="display:none;">
+          <h3>Send a message to the textbook owner:</h3>
+          <p><textarea id="text" name="text" minlength="1"></textarea></p>
+          <input id="textbook" name="textbook" value="<%=textbook.id%>" style="display:none;">
+          <button type="submit" id="submit-inquiry" formmethod="POST" formaction="/inquiries">Send</button>
+        </form>
         <% } else { %>
         <div class="update-delete">
           <form>
